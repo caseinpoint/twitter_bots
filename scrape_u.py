@@ -35,7 +35,7 @@ def fix_exclamation(matchobj):
 # search_terms = ['npr', 'nprpolitics', 'MSNBC', 'MSNBC_Breaking', 'CNN', 'BBCWorld', 'BBCBreaking', 'MotherJones', 'thehill', 'MoveOn', 'NBCNews', 'NBCNewsNow']
 # search_terms = ['DeepakChopra', 'chopracenter', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain']
 search_terms = ['DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath']
-# search_terms = ['realDonaldTrump', 'IvankaTrump', 'FLOTUS', 'DonaldJTrumpJr', 'EricTrump', 'TiffanyATrump', 'TeamTrump', 'Mike_Pence', 'Scavino45', 'WomenforTrump']
+# search_terms = ['realDonaldTrump', 'IvankaTrump', 'FLOTUS', 'DonaldJTrumpJr', 'EricTrump', 'TiffanyATrump', 'TeamTrump', 'Mike_Pence', 'VP', 'Scavino45', 'WomenforTrump']
 
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=2)

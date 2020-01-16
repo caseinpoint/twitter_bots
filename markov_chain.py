@@ -72,7 +72,7 @@ class MarkovChain:
 				word = dist[0][0]
 			yield word
 
-	def generate_tweet(self, start_with=None, rand=lambda x: random.random() * x, append_tag=None):
+	def generate_tweet(self, start_with=None, rand=lambda x: random.random() * x, append_tag=None, follow=False):
 		if len(self.tree) == 0:
 			return
 		t_keys = [w for w in self.tree.keys()]
@@ -98,6 +98,8 @@ class MarkovChain:
 
 			if word == 'i':
 				tweet.append('I')
+			elif word == '@algorithmof':
+				tweet.append('@AlgorithmOf')
 			elif prev_word.endswith('.') or prev_word.endswith('!') or prev_word.endswith('?'):
 				tweet.append(word.capitalize())
 			else:
@@ -109,8 +111,13 @@ class MarkovChain:
 
 		tweet[0] = tweet[0].capitalize()
 		tweet.append('#MarkovChain.')
+
 		if append_tag is not None:
 			tweet.append(append_tag)
+
+		if follow == True and '@AlgorithmOf' not in tweet:
+			tweet.append('Follow @AlgorithmOf')
+
 		return ' '.join(tweet)
 
 	def generate_sentence(self, start_with=None, rand=lambda x: random.random() * x, verbose=False):
