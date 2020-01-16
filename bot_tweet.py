@@ -11,29 +11,35 @@ twit = Twitter(auth=oauth, retry=1)
 chain = MarkovChain()
 
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
-num = 18 + 1 # +1 for range
+num = 14 + 1 # +1 for range
 for i in range(1,num):
 	print('~i:', i)
-	if i % 6 == 1:
+	if i % 7 == 1:
 		category = 'newage'
 		chain.load_training('bin/twitter/newage.bin')
-	elif i % 6 == 2:
+	elif i % 7 == 2:
 		category = 'allgods'
 		chain.load_training('bin/twitter/allgods.bin')
-	elif i % 6 == 3:
+	elif i % 7 == 3:
 		category = 'newagers'
 		chain.load_training('bin/twitter/newagers.bin')
-	elif i % 6 == 4:
+	elif i % 7 == 4:
 		category = 'apologists'
 		chain.load_training('bin/twitter/apologists.bin')
-	elif i % 6 == 5:
+	elif i % 7 == 5:
 		category = 'newtestament'
 		chain.load_training('bin/new_testament.bin')
-	else:
+	elif i % 7 == 6:
 		category = 'deepakchopra'
-		chain.load_training(f'bin/chopra.bin')
+		chain.load_training('bin/chopra.bin')
+	else:
+		category = None
+		chain.load_training('bin/follow_me.bin')
 
-	tweet = chain.generate_tweet(append_tag=f'Category: #{category}')
+	if category is not None:
+		tweet = chain.generate_tweet(append_tag=f'Category: #{category}')
+	else:
+		tweet = chain.generate_tweet(follow=True)
 	print(f'-t: {tweet}')
 	twit.statuses.update(status=tweet)
 
