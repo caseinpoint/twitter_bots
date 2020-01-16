@@ -1,3 +1,5 @@
+# https://medium.com/@G3Kappa/writing-a-weight-adjustable-markov-chain-based-text-generator-in-python-9bbde6437fb4
+
 import re, glob, pickle, random
 
 class MarkovChain:

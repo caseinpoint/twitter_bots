@@ -1,3 +1,5 @@
+# https://medium.com/@G3Kappa/writing-a-weight-adjustable-markov-chain-based-text-generator-in-python-9bbde6437fb4
+
 import random
 
 
@@ -15,7 +17,7 @@ def aw_favor_simplicity(a, b):
 
 def aw_favor_complexity(a, b):
     return 1 - aw_favor_simplicity(a, b)
-	
+
 
 def aw_favor_alternating_complexity(a, b):
     return (aw_favor_simplicity(b, b) + aw_favor_complexity(a, a)) / 2
