@@ -7,11 +7,11 @@ from markov_chain import MarkovChain
 from markov_algorithms import *
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
 
-EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|rape|raping|#trump|#maga|pedophile|#fakenews', re.I)
+EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|rape|raping|#trump|#maga|pedophile|#fakenews|nigger', re.I)
 TEXT_ONLY = re.compile(r'[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\]{}-]', re.I)
 RETWEET = re.compile(r'\s?RT\s')
 USER_NAME = re.compile(r'@\S+', re.I)
-LINKS = re.compile(r'https?://\S+', re.I)
+LINKS = re.compile(r'https?\S+', re.I)
 AMPERSAND = re.compile(r'&amp;', re.I)
 GT = re.compile(r'&gt;', re.I)
 LT = re.compile(r'&lt;', re.I)
@@ -39,12 +39,12 @@ chain = MarkovChain()
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=2)
 
-search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'shiva', 'yahweh', 'allah', 'vishnu', 'GuruNanak']
+# search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'shiva', 'yahweh', 'allah', 'vishnu', 'GuruNanak']
 # 	*** train on old tweets before scraping newage ***
-# chain.train_on_file('training_txt/williamson_tweets.txt')
-# chain.train_on_file('training_txt/chopra_tweets.txt')
-# print('old newage tweets:', len(chain.tree))
-# search_terms = ['transcendence', 'astral', 'zodiac', 'awakening', 'chakras', 'crystal', 'aura', 'numerology', 'tarot', 'meditation', 'mindfulness']
+chain.train_on_file('training_txt/williamson_tweets.txt')
+chain.train_on_file('training_txt/chopra_tweets.txt')
+print('old newage tweets:', len(chain.tree))
+search_terms = ['wicca', 'astral', 'zodiac', 'awakening', 'chakras', 'crystal', 'aura', 'numerology', 'tarot', 'meditation', 'mindfulness']
 # search_terms = ['psychedelics', 'cannabis', 'magicmushrooms ', 'dmt', 'lsd', 'psilocybin', 'ayahuasca', 'psychonaut', 'acid', 'peyote']
 # search_terms = ['epistemology', 'ontology', 'atheism', 'humanism', 'godless', 'secularism', 'skeptic', 'athiest', 'humanist', 'antitheist', 'freedomfromreligion', 'secular', 'agnostic']
 # search_terms = ['rpg', 'ttrpg', 'dnd', 'dnd5e', 'pathfinder', '13thage', 'tabletop', 'dungeonmaster', 'dungeonsanddragons', 'tabletoprpg']
@@ -97,8 +97,8 @@ for term in search_terms:
 
 chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .001), aw_mult(aw_favor_consonants, .1), aw_mult(aw_favor_alliterations, .01)], iterations=len(chain.tree))
 
-chain.save_training('bin/twitter/allgods.bin')
-# chain.save_training('bin/twitter/newage.bin')
+# chain.save_training('bin/twitter/allgods.bin')
+chain.save_training('bin/twitter/newage.bin')
 # chain.save_training('bin/twitter/psychonaut.bin')
 # chain.save_training('bin/twitter/reason.bin')
 # chain.save_training('bin/twitter/dnd.bin')

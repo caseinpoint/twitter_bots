@@ -6,11 +6,11 @@ from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECR
 from markov_chain import MarkovChain
 from markov_algorithms import *
 
-EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|#rape|#raping|#trump|#maga|#pedophile|#fakenews', re.I)
+EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|#rape|#raping|#trump|#maga|#pedophile|#fakenews|nigger', re.I)
 TEXT_ONLY = re.compile(r'[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\]{}-]', re.I)
 RETWEET = re.compile(r'\s?RT\s')
 USER_NAME = re.compile(r'@\S+', re.I)
-LINKS = re.compile(r'https?://\S+', re.I)
+LINKS = re.compile(r'https?\S+', re.I)
 AMPERSAND = re.compile(r'&amp;', re.I)
 GT = re.compile(r'&gt;', re.I)
 LT = re.compile(r'&lt;', re.I)

@@ -11,7 +11,7 @@ twit = Twitter(auth=oauth, retry=1)
 chain = MarkovChain()
 
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
-num = 19
+num = 18 + 1 # +1 for range
 for i in range(1,num):
 	print('~i:', i)
 	if i % 6 == 1:
@@ -37,7 +37,15 @@ for i in range(1,num):
 	print(f'-t: {tweet}')
 	twit.statuses.update(status=tweet)
 
+	if i % 6 == 0:
+		delay = random.randint(32,64)
+		print(f'_d: {delay} seconds\n')
+		time.sleep(delay)
+		tweet = 'Become a disciple of the Church of the Inscrutable Algorithm; follow @AlgorithmOf\n\n#MarkovChain'
+		print(f'-t: {tweet}')
+		twit.statuses.update(status=tweet)
+
 	if i < num - 1:
-		delay = random.randint(512,1024)
+		delay = random.randint(32,64)
 		print(f'_d: {delay} seconds\n')
 		time.sleep(delay)
