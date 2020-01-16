@@ -37,15 +37,7 @@ for i in range(1,num):
 	print(f'-t: {tweet}')
 	twit.statuses.update(status=tweet)
 
-	if i % 6 == 0:
-		delay = random.randint(32,64)
-		print(f'_d: {delay} seconds\n')
-		time.sleep(delay)
-		tweet = 'Become a disciple of the Church of the Inscrutable Algorithm; follow @AlgorithmOf\n\n#MarkovChain'
-		print(f'-t: {tweet}')
-		twit.statuses.update(status=tweet)
-
 	if i < num - 1:
-		delay = random.randint(32,64)
+		delay = random.randint(1024,2048)
 		print(f'_d: {delay} seconds\n')
 		time.sleep(delay)
