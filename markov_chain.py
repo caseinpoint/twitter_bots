@@ -98,8 +98,8 @@ class MarkovChain:
 
 			if word == 'i':
 				tweet.append('I')
-			elif word == '@algorithmof':
-				tweet.append('@AlgorithmOf')
+			elif word == '@markovchurch':
+				tweet.append('@MarkovChurch')
 			elif prev_word.endswith('.') or prev_word.endswith('!') or prev_word.endswith('?'):
 				tweet.append(word.capitalize())
 			else:
@@ -109,14 +109,15 @@ class MarkovChain:
 			if count_len >= 32 and (word.endswith('.') or word.endswith('!') or word.endswith('?')):
 				break
 
-		tweet[0] = tweet[0].capitalize()
+		if tweet[0] != '@MarkovChurch':
+			tweet[0] = tweet[0].capitalize()
 		tweet.append('#MarkovChain.')
 
 		if append_tag is not None:
 			tweet.append(append_tag)
 
-		if follow == True and '@AlgorithmOf' not in tweet:
-			tweet.append('Follow @AlgorithmOf')
+		if follow == True and '@MarkovChurch' not in tweet:
+			tweet.append('#Follow @MarkovChurch')
 
 		return ' '.join(tweet)
 

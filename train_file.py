@@ -11,7 +11,7 @@ chain.train_on_file('training_txt/follow_me.txt')
 
 print(f'len(chain.tree): {len(chain.tree)}\n')
 
-# chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .001), aw_mult(aw_favor_consonants, .1), aw_mult(aw_favor_alliterations, .01)], iterations=len(chain.tree))
+chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .001), aw_mult(aw_favor_alternating_complexity, .1), aw_mult(aw_favor_alliterations, .01)], iterations=len(chain.tree))
 
 
 # chain.save_training('bin/chopra.bin')
