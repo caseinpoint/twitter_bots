@@ -44,6 +44,6 @@ for i in range(num):
 	twit.statuses.update(status=tweet)
 
 	if i < num - 1:
-		delay = random.randint(1024,2048)
+		delay = random.randint(512,1024)
 		print(f'_d: {delay} seconds\n')
 		time.sleep(delay)

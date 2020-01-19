@@ -34,6 +34,21 @@ def fix_exclamation(matchobj):
 	fix = matchobj.group(0).split('!')
 	return '! '.join(fix)
 
+def clean_tweet(tweet):
+	tweet = TEXT_ONLY.sub(' ', tweet)
+	tweet = RETWEET.sub(' ', tweet)
+	tweet = USER_NAME.sub(' ', tweet)
+	tweet = LINKS.sub(' ', tweet)
+	tweet = TYPO_HASHTAGS.sub(fix_hashtag, tweet)
+	tweet = TYPO_PERIOD.sub(fix_period, tweet)
+	tweet = TYPO_QUESTION.sub(fix_question, tweet)
+	tweet = TYPO_EXCLAMATION.sub(fix_exclamation, tweet)
+	tweet = LONE_PUNCTUATION.sub(' ', tweet)
+	tweet = AMPERSAND.sub('and', tweet)
+	tweet = GT.sub('>', tweet)
+	tweet = LT.sub('<', tweet)
+	return tweet
+
 chain = MarkovChain()
 
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
@@ -55,18 +70,7 @@ for term in search_terms:
 	tweets = twit.search.tweets(q=f'#{term}', count=100, tweet_mode='extended')
 	for t in tweets['statuses']:
 		if EXCLUDE_WORDS.search(t['full_text']) is None:
-			tweet = TEXT_ONLY.sub(' ', t['full_text'])
-			tweet = RETWEET.sub(' ', tweet)
-			tweet = USER_NAME.sub(' ', tweet)
-			tweet = LINKS.sub(' ', tweet)
-			tweet = TYPO_HASHTAGS.sub(fix_hashtag, tweet)
-			tweet = TYPO_PERIOD.sub(fix_period, tweet)
-			tweet = TYPO_QUESTION.sub(fix_question, tweet)
-			tweet = TYPO_EXCLAMATION.sub(fix_exclamation, tweet)
-			tweet = LONE_PUNCTUATION.sub(' ', tweet)
-			tweet = AMPERSAND.sub('and', tweet)
-			tweet = GT.sub('>', tweet)
-			tweet = LT.sub('<', tweet)
+			tweet = clean_tweet(t['full_text'])
 			chain.train(tweet)
 		# else:
 		# 	print('_bad tweet:_\t', t['full_text'])
@@ -77,18 +81,7 @@ for term in search_terms:
 		tweets = twit.search.tweets(q=f'#{term}', count=100, tweet_mode='extended', max_id=next_id)
 		for t in tweets['statuses']:
 			if EXCLUDE_WORDS.search(t['full_text']) is None:
-				tweet = TEXT_ONLY.sub(' ', t['full_text'])
-				tweet = RETWEET.sub(' ', tweet)
-				tweet = USER_NAME.sub(' ', tweet)
-				tweet = LINKS.sub(' ', tweet)
-				tweet = AMPERSAND.sub('and', tweet)
-				tweet = TYPO_HASHTAGS.sub(fix_hashtag, tweet)
-				tweet = TYPO_PERIOD.sub(fix_period, tweet)
-				tweet = TYPO_QUESTION.sub(fix_question, tweet)
-				tweet = TYPO_EXCLAMATION.sub(fix_exclamation, tweet)
-				tweet = LONE_PUNCTUATION.sub(' ', tweet)
-				tweet = GT.sub('>', tweet)
-				tweet = LT.sub('<', tweet)
+				tweet = clean_tweet(t['full_text'])
 				chain.train(tweet)
 			# else:
 			# 	print('_bad tweet:_\t', t['full_text'])
