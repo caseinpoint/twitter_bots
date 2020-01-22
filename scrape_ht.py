@@ -8,14 +8,13 @@ from markov_algorithms import *
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
 
 EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|rape|raping|#trump|#maga|pedophile|#fakenews|nigger', re.I)
-TEXT_ONLY = re.compile(r'[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\]{}-]', re.I)
+TEXT_ONLY = re.compile(r'[^A-Z0-9 .,+=!?&@_/#$%^*;:"()[\]{}\'-]', re.I)
 RETWEET = re.compile(r'\s?RT\s')
 USER_NAME = re.compile(r'@\S+', re.I)
-LINKS = re.compile(r'https?\S+', re.I)
+LINKS = re.compile(r'https?\S*', re.I)
 AMPERSAND = re.compile(r'&amp;', re.I)
 GT = re.compile(r'&gt;', re.I)
 LT = re.compile(r'&lt;', re.I)
-# LONE_PUNCTUATION = re.compile(r'\s[.,!?#:@-]\s')
 LONE_PUNCTUATION = re.compile(r'\s[^a-zA-Z0-9_]\s')
 TYPO_HASHTAGS = re.compile(r'\w+#\w+', re.I)
 def fix_hashtag(matchobj):
@@ -59,7 +58,7 @@ search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'shiva
 # chain.train_on_file('training_txt/williamson_tweets.txt')
 # chain.train_on_file('training_txt/chopra_tweets.txt')
 # print('old newage tweets:', len(chain.tree))
-# search_terms = ['wicca', 'astral', 'zodiac', 'awakening', 'chakras', 'crystal', 'aura', 'numerology', 'tarot', 'meditation', 'mindfulness']
+# search_terms = ['wicca', 'astral', 'zodiac', 'awakening', 'chakras', 'retrograde', 'aura', 'numerology', 'tarot', 'meditation', 'mindfulness']
 # search_terms = ['psychedelics', 'cannabis', 'magicmushrooms ', 'dmt', 'lsd', 'psilocybin', 'ayahuasca', 'psychonaut', 'acid', 'peyote']
 # search_terms = ['epistemology', 'ontology', 'atheism', 'humanism', 'godless', 'secularism', 'skeptic', 'athiest', 'humanist', 'antitheist', 'freedomfromreligion', 'secular', 'agnostic']
 # search_terms = ['rpg', 'ttrpg', 'dnd', 'dnd5e', 'pathfinder', '13thage', 'tabletop', 'dungeonmaster', 'dungeonsanddragons', 'tabletoprpg']

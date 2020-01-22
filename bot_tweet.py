@@ -11,7 +11,7 @@ twit = Twitter(auth=oauth, retry=1)
 chain = MarkovChain()
 
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
-num = 21
+num = 10
 for i in range(num):
 	print('~i:', i)
 	if i % 5 == 0:
