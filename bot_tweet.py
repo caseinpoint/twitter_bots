@@ -11,12 +11,14 @@ twit = Twitter(auth=oauth, retry=1)
 chain = MarkovChain()
 
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
-num = 10
+num = 15
 for i in range(num):
 	print('~i:', i)
 	if i % 5 == 0:
-		category = 'newage'
-		chain.load_training('bin/twitter/newage.bin')
+		# category = 'newage'
+		# chain.load_training('bin/twitter/newage.bin')
+		category = 'apologists'
+		chain.load_training('bin/twitter/apologists.bin')
 	elif i % 5 == 1:
 		category = 'allgods'
 		chain.load_training('bin/twitter/allgods.bin')
@@ -44,6 +46,6 @@ for i in range(num):
 	twit.statuses.update(status=tweet)
 
 	if i < num - 1:
-		delay = random.randint(512,1024)
+		delay = random.randint(1024, 2048)
 		print(f'_d: {delay} seconds\n')
 		time.sleep(delay)

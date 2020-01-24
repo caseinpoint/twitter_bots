@@ -7,7 +7,7 @@ from markov_chain import MarkovChain
 from markov_algorithms import *
 
 EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|#rape|#raping|#trump|#maga|#pedophile|#fakenews|nigger', re.I)
-TEXT_ONLY = re.compile(r'[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\]{}-]', re.I)
+TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\]{}-]', re.I)
 RETWEET = re.compile(r'\s?RT\s')
 USER_NAME = re.compile(r'@\S+', re.I)
 LINKS = re.compile(r'https?\S*', re.I)
@@ -15,7 +15,7 @@ AMPERSAND = re.compile(r'&amp;', re.I)
 GT = re.compile(r'&gt;', re.I)
 LT = re.compile(r'&lt;', re.I)
 LONE_PUNCTUATION = re.compile(r'\s[^a-zA-Z0-9_]\s')
-TYPO_HASHTAGS = re.compile(r'\w+#\w+', re.I)
+TYPO_HASHTAGS = re.compile(r'\S+#\w+', re.I)
 def fix_hashtag(matchobj):
 	fix = matchobj.group(0).split('#')
 	return ' #'.join(fix)
@@ -33,10 +33,10 @@ def fix_exclamation(matchobj):
 	return '! '.join(fix)
 
 # search_terms = ['npr', 'nprpolitics', 'MSNBC', 'MSNBC_Breaking', 'CNN', 'BBCWorld', 'BBCBreaking', 'MotherJones', 'thehill', 'MoveOn', 'NBCNews', 'NBCNewsNow']
-# search_terms = ['DeepakChopra', 'chopracenter', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain']
-# search_terms = ['DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath']
+# search_terms = ['DeepakChopra', 'chopracenter', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain', 'NativeAmWisdom']
+search_terms = ['DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath']
 # search_terms = ['Pontifex', 'churchofengland', 'UMChurch', 'advmission', 'NABFellowship', 'Presbyterian', 'ELCA', 'UCC_Official']
-search_terms = ['realDonaldTrump', 'IvankaTrump', 'FLOTUS', 'DonaldJTrumpJr', 'EricTrump', 'TiffanyATrump', 'TeamTrump', 'Mike_Pence', 'VP', 'Scavino45', 'WomenforTrump']
+# search_terms = ['realDonaldTrump', 'IvankaTrump', 'FLOTUS', 'DonaldJTrumpJr', 'EricTrump', 'TiffanyATrump', 'TeamTrump', 'Mike_Pence', 'VP', 'Scavino45', 'WomenforTrump']
 
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=2)
@@ -63,12 +63,12 @@ for user in search_terms:
 			chain.train(tweet)
 	print(f'len(chain.tree): {len(chain.tree)}')
 
-chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .001), aw_mult(aw_favor_consonants, .1), aw_mult(aw_favor_alliterations, .01)], iterations=len(chain.tree))
+chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
 
 print('Sample tweet:', chain.generate_tweet())
 
 # chain.save_training('bin/twitter/news.bin')
 # chain.save_training('bin/twitter/newagers.bin')
-# chain.save_training('bin/twitter/apologists.bin')
+chain.save_training('bin/twitter/apologists.bin')
 # chain.save_training('bin/twitter/churches.bin')
-chain.save_training('bin/twitter/trumpsterfire.bin')
+# chain.save_training('bin/twitter/trumpsterfire.bin')
