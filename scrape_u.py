@@ -45,7 +45,7 @@ chain = MarkovChain()
 
 for user in search_terms:
 	print(f'search_term: {user}')
-	tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended')
+	tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', lang='en')
 	for t in tweets:
 		if EXCLUDE_WORDS.search(t['full_text']) is None:
 			tweet = TEXT_ONLY.sub(' ', t['full_text'])

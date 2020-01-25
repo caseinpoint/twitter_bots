@@ -53,13 +53,13 @@ chain = MarkovChain()
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=2)
 
-search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheguru', 'shiva', 'yahweh', 'allah', 'vishnu', 'GuruNanak']
+search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheguru', 'shiva', 'yahweh', 'vishnu', 'GuruNanak']
 # 	*** train on old tweets before scraping newage ***
 # chain.train_on_file('training_txt/williamson_tweets.txt')
 # chain.train_on_file('training_txt/chopra_tweets.txt')
 # print('old newage tweets:', len(chain.tree))
 # search_terms = ['wicca', 'astral', 'zodiac', 'awakening', 'chakras', 'retrograde', 'aura', 'numerology', 'tarot', 'meditation', 'mindfulness']
-# search_terms = ['follow', 'retweet', 'follow4follow', 'rt', 'like', 'f4f', 'followback']
+# search_terms = ['follow', 'retweet', 'follow4follow', 'rt', 'like', 'f4f', 'followback', 'like4like', 'comment', 'followfriday']
 # search_terms = ['psychedelics', 'cannabis', 'magicmushrooms ', 'dmt', 'lsd', 'psilocybin', 'ayahuasca', 'psychonaut', 'acid', 'peyote']
 # search_terms = ['epistemology', 'ontology', 'atheism', 'humanism', 'godless', 'secularism', 'skeptic', 'athiest', 'humanist', 'antitheist', 'freedomfromreligion', 'secular', 'agnostic']
 # search_terms = ['rpg', 'ttrpg', 'dnd', 'dnd5e', 'pathfinder', '13thage', 'tabletop', 'dungeonmaster', 'dungeonsanddragons', 'tabletoprpg']
@@ -67,7 +67,7 @@ search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheg
 
 for term in search_terms:
 	print('search_term:', term)
-	tweets = twit.search.tweets(q=f'#{term}', count=100, tweet_mode='extended')
+	tweets = twit.search.tweets(q=f'#{term}', count=100, tweet_mode='extended', lang='en')
 	for t in tweets['statuses']:
 		if EXCLUDE_WORDS.search(t['full_text']) is None:
 			tweet = clean_tweet(t['full_text'])
@@ -78,7 +78,7 @@ for term in search_terms:
 		if 'next_results' not in tweets['search_metadata']:
 			break
 		next_id = re.split(r'\D+', tweets['search_metadata']['next_results'])[1]
-		tweets = twit.search.tweets(q=f'#{term}', count=100, tweet_mode='extended', max_id=next_id)
+		tweets = twit.search.tweets(q=f'#{term}', count=100, tweet_mode='extended', max_id=next_id, lang='en')
 		for t in tweets['statuses']:
 			if EXCLUDE_WORDS.search(t['full_text']) is None:
 				tweet = clean_tweet(t['full_text'])

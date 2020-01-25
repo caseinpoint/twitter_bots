@@ -48,7 +48,7 @@ chain = MarkovChain()
 
 for trend in trends:
 	print(f'trend: {trend}')
-	tweets = twit.search.tweets(q=trend, count=100, tweet_mode='extended')
+	tweets = twit.search.tweets(q=trend, count=100, tweet_mode='extended', lang='en')
 	for t in tweets['statuses']:
 		if EXCLUDE_WORDS.search(t['full_text']) is None:
 			tweet = TEXT_ONLY.sub(' ', t['full_text'])
@@ -68,7 +68,7 @@ for trend in trends:
 		if 'next_results' not in tweets['search_metadata']:
 			break
 		next_id = re.split(r'\D+', tweets['search_metadata']['next_results'])[1]
-		tweets = twit.search.tweets(q=trend, count=100, tweet_mode='extended', max_id=next_id)
+		tweets = twit.search.tweets(q=trend, count=100, tweet_mode='extended', max_id=next_id, lang='en')
 		for t in tweets['statuses']:
 			if EXCLUDE_WORDS.search(t['full_text']) is None:
 				tweet = TEXT_ONLY.sub(' ', t['full_text'])
@@ -86,7 +86,7 @@ for trend in trends:
 				chain.train(tweet)
 	print(f'len(chain.tree): {len(chain.tree)}')
 
-chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .001), aw_mult(aw_favor_consonants, .1), aw_mult(aw_favor_alliterations, .01)], iterations=len(chain.tree))
+chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
 
 chain.save_training('bin/twitter/trending.bin')
 
