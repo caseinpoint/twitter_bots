@@ -1,4 +1,3 @@
-# from datetime import datetime
 import re
 
 from twitter import OAuth, Twitter
@@ -20,15 +19,15 @@ TYPO_HASHTAGS = re.compile(r'\S+#\w+', re.I)
 def fix_hashtag(matchobj):
 	fix = matchobj.group(0).split('#')
 	return ' #'.join(fix)
-TYPO_PERIOD = re.compile(r'\w+\.\w+', re.I)
+TYPO_PERIOD = re.compile(r'\w+\.\S+', re.I)
 def fix_period(matchobj):
 	fix = matchobj.group(0).split('.')
 	return '. '.join(fix)
-TYPO_QUESTION = re.compile(r'\w+\?\w+', re.I)
+TYPO_QUESTION = re.compile(r'\w+\?\S+', re.I)
 def fix_question(matchobj):
 	fix = matchobj.group(0).split('?')
 	return '? '.join(fix)
-TYPO_EXCLAMATION = re.compile(r'\w+\!\w+', re.I)
+TYPO_EXCLAMATION = re.compile(r'\w+\!\S+', re.I)
 def fix_exclamation(matchobj):
 	fix = matchobj.group(0).split('!')
 	return '! '.join(fix)
@@ -53,12 +52,12 @@ chain = MarkovChain()
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=2)
 
-search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheguru', 'shiva', 'yahweh', 'vishnu', 'GuruNanak']
+# search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheguru', 'shiva', 'yahweh', 'vishnu', 'GuruNanak']
 # 	*** train on old tweets before scraping newage ***
-# chain.train_on_file('training_txt/williamson_tweets.txt')
-# chain.train_on_file('training_txt/chopra_tweets.txt')
-# print('old newage tweets:', len(chain.tree))
-# search_terms = ['wicca', 'astral', 'zodiac', 'awakening', 'chakras', 'retrograde', 'aura', 'numerology', 'tarot', 'meditation', 'mindfulness']
+chain.train_on_file('training_txt/williamson_tweets.txt')
+chain.train_on_file('training_txt/chopra_tweets.txt')
+print('old newage tweets:', len(chain.tree))
+search_terms = ['wicca', 'astral', 'zodiac', 'awakening', 'chakras', 'retrograde', 'aura', 'numerology', 'tarot', 'meditation', 'mindfulness']
 # search_terms = ['follow', 'retweet', 'follow4follow', 'rt', 'like', 'f4f', 'followback', 'like4like', 'comment', 'followfriday']
 # search_terms = ['psychedelics', 'cannabis', 'magicmushrooms ', 'dmt', 'lsd', 'psilocybin', 'ayahuasca', 'psychonaut', 'acid', 'peyote']
 # search_terms = ['epistemology', 'ontology', 'atheism', 'humanism', 'godless', 'secularism', 'skeptic', 'athiest', 'humanist', 'antitheist', 'freedomfromreligion', 'secular', 'agnostic']
@@ -89,8 +88,8 @@ for term in search_terms:
 
 chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
 
-chain.save_training('bin/twitter/allgods.bin')
-# chain.save_training('bin/twitter/newage.bin')
+# chain.save_training('bin/twitter/allgods.bin')
+chain.save_training('bin/twitter/newage.bin')
 # chain.save_training('bin/twitter/follow.bin')
 # chain.save_training('bin/twitter/psychonaut.bin')
 # chain.save_training('bin/twitter/reason.bin')
