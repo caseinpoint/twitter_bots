@@ -104,9 +104,10 @@ class MarkovChain:
 				tweet.append(word.capitalize())
 			else:
 				tweet.append(word)
-			count_len += len(word) + 1
 
-			if count_len >= 32 and (word.endswith('.') or word.endswith('!') or word.endswith('?')):
+			count_len += len(word) + 1 # plus one for space
+
+			if count_len >= 48 and (word.endswith('.') or word.endswith('!') or word.endswith('?')):
 				break
 
 		if tweet[0] != '@MarkovChurch':
@@ -117,7 +118,7 @@ class MarkovChain:
 			tweet.append(append_tag)
 
 		if follow == True and '@MarkovChurch' not in tweet:
-			tweet.append('#Follow @MarkovChurch')
+			tweet.append('\n\n#Follow @MarkovChurch')
 
 		return ' '.join(tweet)
 
