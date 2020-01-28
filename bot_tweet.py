@@ -1,4 +1,3 @@
-from datetime import datetime
 import random, time
 from twitter import OAuth, Twitter
 
