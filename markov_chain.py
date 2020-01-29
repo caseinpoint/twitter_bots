@@ -91,10 +91,12 @@ class MarkovChain:
 			dist = sorted([(w, rand(self.tree[word][w] / len(self.tree[word]))) for w in self.tree[word]], key=lambda k: 1-k[1])
 
 			prev_word = word
-			if len(dist) > 1:
-				word = dist[1][0]
-			else:
-				word = dist[0][0]
+			# if len(dist) > 1:
+			# 	word = dist[1][0]
+			# else:
+			word = dist[0][0]
+			if word in tweet:
+				word = random.choice(dist)[0]
 
 			if word == 'i':
 				tweet.append('I')
