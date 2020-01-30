@@ -6,7 +6,7 @@ SPLIT = re.compile('[“”"\s\d,.!?;:/()[\]]')
 w_count = 0
 all_words = {}
 
-read_name = 'youaretheuniverse.txt'
+read_name = 'new_testament.csv'
 with open(file=read_name, mode='r') as read_file:
 	line = read_file.readline()
 	while len(line) > 0:
@@ -44,4 +44,4 @@ with open(file=write_name, mode='w', newline='') as write_file:
 			first_row = False
 		writer.writerow(row)
 
-print(read_name)
+print(f'{read_name} -> {write_name}')

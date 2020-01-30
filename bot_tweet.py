@@ -14,10 +14,10 @@ num = 15
 for i in range(num):
 	print('~i:', i)
 	if i % 5 == 0:
-		# category = 'newage'
-		# chain.load_training('bin/twitter/newage.bin')
-		category = 'apologists'
-		chain.load_training('bin/twitter/apologists.bin')
+		category = 'newage'
+		chain.load_training('bin/twitter/newage.bin')
+		# category = 'apologists'
+		# chain.load_training('bin/twitter/apologists.bin')
 	elif i % 5 == 1:
 		category = 'allgods'
 		chain.load_training('bin/twitter/allgods.bin')

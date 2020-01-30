@@ -33,10 +33,11 @@ def fix_exclamation(matchobj):
 	return '! '.join(fix)
 
 # search_terms = ['npr', 'nprpolitics', 'MSNBC', 'MSNBC_Breaking', 'CNN', 'BBCWorld', 'BBCBreaking', 'MotherJones', 'thehill', 'MoveOn', 'NBCNews', 'NBCNewsNow']
-# search_terms = ['DeepakChopra', 'chopracenter', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain', 'NativeAmWisdom']
-search_terms = ['DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV']
+search_terms = ['DeepakChopra', 'chopracenter', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain', 'NativeAmWisdom']
+# search_terms = ['DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV']
 # search_terms = ['Pontifex', 'churchofengland', 'UMChurch', 'advmission', 'NABFellowship', 'Presbyterian', 'ELCA', 'UCC_Official']
 # search_terms = ['realDonaldTrump', 'IvankaTrump', 'FLOTUS', 'DonaldJTrumpJr', 'EricTrump', 'TiffanyATrump', 'TeamTrump', 'Mike_Pence', 'VP', 'Scavino45', 'WomenforTrump']
+# search_terms = ['MarkovChurch']
 
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=2)
@@ -61,6 +62,7 @@ for user in search_terms:
 			tweet = GT.sub('>', tweet)
 			tweet = LT.sub('<', tweet)
 			chain.train(tweet)
+		# chain.train(t['full_text'])
 	print(f'len(chain.tree): {len(chain.tree)}')
 
 chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
@@ -68,7 +70,8 @@ chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001),
 print('Sample tweet:', chain.generate_tweet())
 
 # chain.save_training('bin/twitter/news.bin')
-# chain.save_training('bin/twitter/newagers.bin')
-chain.save_training('bin/twitter/apologists.bin')
+chain.save_training('bin/twitter/newagers.bin')
+# chain.save_training('bin/twitter/apologists.bin')
 # chain.save_training('bin/twitter/churches.bin')
 # chain.save_training('bin/twitter/trumpsterfire.bin')
+# chain.save_training('bin/twitter/meta.bin')
