@@ -6,8 +6,8 @@ chain = MarkovChain()
 # chain.train_on_file(filename='training_txt/metahuman.txt', verbose=True)
 # chain.train_on_file(filename='training_txt/youaretheuniverse.txt', verbose=True)
 # chain.train_on_file(filename='training_txt/chopra_tweets.txt', verbose=True)
-chain.train_on_file(filename='training_txt/new_testament.csv', verbose=True)
-# chain.train_on_file(filename='training_txt/follow_me.txt', verbose=True)
+# chain.train_on_file(filename='training_txt/new_testament.csv', verbose=True)
+chain.train_on_file(filename='training_txt/follow_me.txt', verbose=True)
 
 print(f'len(chain.tree): {len(chain.tree)}\n')
 
@@ -15,8 +15,8 @@ print(f'len(chain.tree): {len(chain.tree)}\n')
 
 
 # chain.save_training('bin/chopra.bin')
-chain.save_training('bin/new_testament.bin')
-# chain.save_training('bin/follow_me.bin')
+# chain.save_training('bin/new_testament.bin')
+chain.save_training('bin/follow_me.bin')
 
 for i in range(10):
 	print(chain.generate_tweet(append_tag=None, follow=True), '\n\n')

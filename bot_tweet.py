@@ -38,7 +38,7 @@ for i in range(num):
 		chain.load_training('bin/follow_me.bin')
 
 	if category is not None:
-		tweet = chain.generate_tweet(append_tag=f'Category: #{category}')
+		tweet = chain.generate_tweet(append_tag=f'\n[Category: #{category}]')
 	else:
 		tweet = chain.generate_tweet(follow=True)
 	print(f'-t: {tweet}')
