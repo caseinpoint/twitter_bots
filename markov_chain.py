@@ -76,18 +76,19 @@ class MarkovChain:
 		if len(self.tree) == 0:
 			return
 		t_keys = [w for w in self.tree.keys()]
-		if start_with is None:
+		if start_with is None or start_with not in t_keys:
 			word = random.choice(t_keys)
 		else:
 			word = start_with
-		while word.endswith('.') or word.endswith('!') or word.endswith('?') or word.startswith('#'):
+		while word.endswith('.') or word.endswith('!') or word.endswith('?'):
 			word = random.choice(t_keys)
 		tweet = [word]
 		count_len = len(word) + 1
 
 		while count_len <= 140:
 			if word not in self.tree:
-				word = random.choice(t_keys)
+				# word = random.choice(t_keys)
+				break
 			dist = sorted([(w, rand(self.tree[word][w] / len(self.tree[word]))) for w in self.tree[word]], key=lambda k: 1-k[1])
 
 			prev_word = word

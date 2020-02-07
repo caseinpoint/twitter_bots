@@ -10,14 +10,14 @@ twit = Twitter(auth=oauth, retry=1)
 chain = MarkovChain()
 
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
-num = 15
+num = 20
 for i in range(num):
 	print('~i:', i)
 	if i % 5 == 0:
 		category = 'newage'
 		chain.load_training('bin/twitter/newage.bin')
-		# category = 'apologists'
-		# chain.load_training('bin/twitter/apologists.bin')
+		# category = 'zodiac'
+		# chain.load_training('bin/twitter/zodiac.bin')
 	elif i % 5 == 1:
 		category = 'allgods'
 		chain.load_training('bin/twitter/allgods.bin')

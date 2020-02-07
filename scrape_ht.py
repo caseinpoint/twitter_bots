@@ -7,7 +7,7 @@ from markov_algorithms import *
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
 
 EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|rape|raping|#trump|#maga|pedophile|#fakenews|nigger', re.I)
-TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:"()[\]{}\'-]', re.I)
+TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:"()[\\]{}\'-]', re.I)
 RETWEET = re.compile(r'\s?RT\s')
 USER_NAME = re.compile(r'@\S+', re.I)
 LINKS = re.compile(r'https?\S*', re.I)
@@ -63,6 +63,7 @@ search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheg
 # search_terms = ['rpg', 'ttrpg', 'dnd', 'dnd5e', 'pathfinder', '13thage', 'tabletop', 'dungeonmaster', 'dungeonsanddragons', 'tabletoprpg']
 # search_terms = ['algorithm', 'datastructures', 'python', 'java', 'golang', 'sql', 'cplusplus', 'csharp', 'kotlin', 'swift', 'machinelearning', 'artificialintelligence']
 # search_terms = ['mentalhealth', 'depression', 'anxiety', 'therapy', 'behavioraltherapy', 'EndTheStigma', 'SuicideAwareness', 'SuicidePrevention', 'mentalillness', 'depressionfeelslike']
+# search_terms = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
 
 for term in search_terms:
 	print('search_term:', term)
@@ -95,4 +96,5 @@ chain.save_training('bin/twitter/allgods.bin')
 # chain.save_training('bin/twitter/dnd.bin')
 # chain.save_training('bin/twitter/coding.bin')
 # chain.save_training('bin/twitter/mentalhealth.bin')
+# chain.save_training('bin/twitter/zodiac.bin')
 print('Sample tweet:', chain.generate_tweet())
