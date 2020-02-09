@@ -157,7 +157,7 @@ class MarkovChain:
 			# self.train(reduce(lambda a, b: f'{a} {b}', p), x)
 			self.train(text=f'{p[0]} {p[1]}', factor=x)
 
-	def bulk_adjust_wieghts(self, fitness_functions=None, iterations=1, pbar_len=14, verbose=False):
+	def bulk_adjust_weights(self, fitness_functions=None, iterations=1, pbar_len=14, verbose=False):
 		if fitness_functions is None or len(fitness_functions) == 0:
 			return
 

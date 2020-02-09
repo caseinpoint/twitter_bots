@@ -3,8 +3,8 @@ from re import split
 from time import sleep
 from markov_chain import MarkovChain
 chain = MarkovChain()
-# chain.load_training('bin/chopra.bin')
-chain.load_training('bin/new_testament.bin')
+chain.load_training('bin/chopra.bin')
+# chain.load_training('bin/new_testament.bin')
 
 from twitter import OAuth, Twitter
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -12,11 +12,11 @@ from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECR
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
-query = '#rosary' # next:
+query = '#higherconsciousness' # next: divinefeminine higherawakening alchemy starseed twinflames innerwisdom higherself
 print(f'{"*"*32} _query_: {query} {"*"*32}\n')
 
 def reply(tweet):
-	s_words = sorted(split(r'\W', tweet['full_text']), key=lambda w: len(w), reverse=True)
+	s_words = sorted(split(r'[^a-zA-Z#]', tweet['full_text']), key=lambda w: len(w), reverse=True)
 	begin = None
 	for word in s_words:
 		if len(word) > 0 and word.lower() in chain.tree:

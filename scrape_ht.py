@@ -87,7 +87,7 @@ for term in search_terms:
 			# 	print('_bad tweet:_\t', t['full_text'])
 	print('len(chain.tree):', len(chain.tree))
 
-chain.bulk_adjust_wieghts(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
+chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
 
 chain.save_training('bin/twitter/allgods.bin')
 # chain.save_training('bin/twitter/newage.bin')
