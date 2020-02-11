@@ -10,26 +10,27 @@ twit = Twitter(auth=oauth, retry=1)
 chain = MarkovChain()
 
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
-num = 24
+num = 21
 for i in range(num):
 	print('~i:', i)
-	if i % 6 == 0:
-		# category = 'newage'
-		# chain.load_training('bin/twitter/newage.bin')
+	if i % 7 == 0:
 		category = 'quran'
 		chain.load_training('bin/quran.bin')
-	elif i % 6 == 1:
+	elif i % 7 == 1:
 		category = 'newtestament'
 		chain.load_training('bin/new_testament.bin')
-	elif i % 6 == 2:
+	elif i % 7 == 2:
 		category = 'tao'
 		chain.load_training('bin/tao.bin')
-	elif i % 6 == 3:
+	elif i % 7 == 3:
 		category = 'allgods'
 		chain.load_training('bin/twitter/allgods.bin')
-	elif i % 6 == 4:
+	elif i % 7 == 4:
 		category = 'deepakchopra'
 		chain.load_training('bin/chopra.bin')
+	elif i % 7 == 5:
+		category = 'samharris'
+		chain.load_training('bin/harris.bin')
 	else:
 		category = None
 		chain.load_training('bin/follow_me.bin')
@@ -42,6 +43,6 @@ for i in range(num):
 	twit.statuses.update(status=tweet)
 
 	if i < num - 1:
-		delay = random.randint(1024, 2048)
+		delay = random.randint(512,1024)
 		print(f'_d: {delay} seconds\n')
 		time.sleep(delay)

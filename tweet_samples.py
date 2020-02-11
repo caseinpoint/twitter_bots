@@ -12,4 +12,4 @@ test_chain.load_training(file_name)
 print(f'{"_"*20} file_name: {file_name} {"_"*20}')
 print(f'{"_"*20} len(test_chain.tree): {len(test_chain.tree)} {"_"*20}\n')
 for i in range(18):
-	print(test_chain.generate_tweet(start_with='illusion', append_tag='#MarkovChain.', follow=False), '\n_\n')
+	print(test_chain.generate_tweet(start_with='tea', append_tag='#MarkovChain.', follow=False), '\n_\n')

@@ -3,9 +3,9 @@ from re import split
 from time import sleep
 from markov_chain import MarkovChain
 chain = MarkovChain()
-chain.load_training('bin/chopra.bin')
+# chain.load_training('bin/chopra.bin')
 # chain.load_training('bin/follow_me.bin')
-# chain.load_training('bin/new_testament.bin')
+chain.load_training('bin/new_testament.bin')
 
 from twitter import OAuth, Twitter
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -13,10 +13,13 @@ from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECR
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
-query = '#higherself' # next: rapture twinflames SundaySermon follow
+query = '#SundaySermon' # next: 
 print(f'{"*"*32} _query_: {query} {"*"*32}\n')
 
+replies = 0
+
 def reply(tweet):
+	global replies
 	# r'[^a-zA-Z#]'
 	s_words = sorted(split(r'\W', tweet['full_text']), key=lambda w: len(w), reverse=True)
 	begin = None
@@ -32,12 +35,12 @@ def reply(tweet):
 	try:
 		twit.statuses.update(status=r_tweet, in_reply_to_status_id=tweet['id'], auto_populate_reply_metadata='true')
 	except Exception as e:
+		replies -= 1
 		print(f'{"!"*32}error{"!"*32}\n{e}\n')
 
 	print(f'{"—"*64}\n')
 
 tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', lang='en')
-replies = 0
 
 for t in tweets['statuses']:
 	if t['is_quote_status'] == False and len(t['entities']['user_mentions']) == 0:

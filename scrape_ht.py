@@ -74,7 +74,7 @@ for term in search_terms:
 			chain.train(tweet)
 		# else:
 		# 	print('_bad tweet:_\t', t['full_text'])
-	for i in range(4):
+	for i in range(6):
 		if 'next_results' not in tweets['search_metadata']:
 			break
 		next_id = re.split(r'\D+', tweets['search_metadata']['next_results'])[1]
