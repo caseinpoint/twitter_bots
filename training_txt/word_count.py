@@ -1,12 +1,12 @@
 from csv import DictWriter
 import re
 
-SPLIT = re.compile('[“”"\s\d,.!?;:/()[\]]')
+SPLIT = re.compile('[“”"\s\d,.!?;:/—()[\]]')
 
 w_count = 0
 all_words = {}
 
-read_name = 'shakespeare.txt'
+read_name = 'tao.txt'
 with open(file=read_name, mode='r') as read_file:
 	line = read_file.readline()
 	while len(line) > 0:

@@ -115,7 +115,7 @@ class MarkovChain:
 
 		if tweet[0] != '@MarkovChurch':
 			tweet[0] = tweet[0].capitalize()
-		tweet.append('#MarkovChain.')
+		# tweet.append('#MarkovChain.')
 
 		if append_tag is not None:
 			tweet.append(append_tag)
