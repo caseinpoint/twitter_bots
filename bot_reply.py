@@ -11,7 +11,7 @@ from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECR
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
-query = '(#meditation OR #energyhealing OR #wiccan OR #astrology OR #zodiac OR #psychic OR #chakras OR #divination OR #numerology OR #tarot OR #mindfulness OR #oneness)'
+query = '(#witch OR #meditation OR #energyhealing OR #wiccan OR #astrology OR #zodiac OR #psychic OR #chakras OR #divination OR #numerology OR #tarot OR #mindfulness OR #oneness)'
 # query = '(#jesuslives OR #jesus OR #christ OR #jesuschrist OR #jesussaves OR #jesusheals OR #yahweh OR #holyspirit OR #deus OR #jesuscalling)'
 print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 

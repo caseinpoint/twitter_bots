@@ -1,8 +1,8 @@
 import datetime as dt
-import random, time
-from twitter import OAuth, Twitter
-
+import os, random, time
 from markov_chain import MarkovChain
+from gtts import gTTS
+from twitter import OAuth, Twitter
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
 
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
@@ -44,11 +44,18 @@ for i in range(num):
 	# else:
 	# 	tweet = chain.generate_tweet(follow=True)
 	print(f'-t: {tweet}')
+	t_speech = gTTS(text=tweet, lang='en', slow=False)
+	t_speech.save('tweet.mp3')
+	os.system('mpg321 -q tweet.mp3')
 	twit.statuses.update(status=tweet)
 
 	if i < num - 1:
 		delay = random.randint(1024,2048)
 		delta = dt.timedelta(seconds=delay)
 		when = dt.datetime.now(tz=dt.timezone(dt.timedelta(hours=-8))) + delta
-		print(f'_d: {delay} seconds (next tweet at {when.strftime("%H:%M:%S")})\n')
+		delay_text = f'delay: {delay} seconds (next tweet at {when.strftime("%H:%M:%S")})'
+		print(delay_text, '\n')
+		d_speech = gTTS(text=delay_text, lang='en', slow=False)
+		d_speech.save('delay.mp3')
+		os.system('mpg321 -q delay.mp3')
 		time.sleep(delay)
