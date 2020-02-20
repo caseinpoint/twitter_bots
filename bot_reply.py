@@ -3,9 +3,7 @@ from re import split
 from time import sleep
 from markov_chain import MarkovChain
 chain = MarkovChain()
-# chain.load_training('bin/chopra.bin')
-# chain.load_training('bin/follow_me.bin')
-chain.load_training('bin/new_testament.bin')
+# chain.load_training('bin/twitter/coding.bin')
 
 from twitter import OAuth, Twitter
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -13,22 +11,33 @@ from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECR
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
-query = '#SundaySermon' # next: 
-print(f'{"*"*32} _query_: {query} {"*"*32}\n')
+query = '(#meditation OR #energyhealing OR #wiccan OR #astrology OR #zodiac OR #psychic OR #chakras OR #divination OR #numerology OR #tarot OR #mindfulness OR #oneness)'
+# query = '(#jesuslives OR #jesus OR #christ OR #jesuschrist OR #jesussaves OR #jesusheals OR #yahweh OR #holyspirit OR #deus OR #jesuscalling)'
+print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 
 replies = 0
 
 def reply(tweet):
 	global replies
-	# r'[^a-zA-Z#]'
-	s_words = sorted(split(r'\W', tweet['full_text']), key=lambda w: len(w), reverse=True)
+	if replies % 3 == 0:
+		chain.load_training('bin/harris.bin')
+		# chain.load_training('bin/quran_testament.bin')
+	elif replies % 3 == 1:
+		chain.load_training('bin/chopra.bin')
+		# chain.load_training('bin/new_testament.bin')
+	else:
+		chain.load_training('bin/waking_meta.bin')
+		# chain.load_training('bin/quran.bin')
+	# r'[^a-zA-Z#]' or r'\W'
+	t_words = sorted(split(r'[^a-zA-Z#]', tweet['full_text']), key=lambda w: len(w), reverse=True)
 	begin = None
-	for word in s_words:
+	for word in t_words:
 		if len(word) > 0 and word.lower() in chain.tree:
 			begin = word.lower()
 			break
 		elif len(word) == 0:
 			break
+
 	r_tweet = chain.generate_tweet(start_with=begin, append_tag='#MarkovChain.', follow=False)
 	print(f'_reply_:\n{r_tweet}\n')
 
@@ -50,14 +59,14 @@ for t in tweets['statuses']:
 
 		reply(t)
 
-		sleep(randint(64,128))
+		sleep(randint(32,64))
 
-for i in range(3):
+for i in range(9):
 	if 'next_results' not in tweets['search_metadata']:
 		break
 	next_id = split(r'\D+', tweets['search_metadata']['next_results'])[1]
 	print(f'\n{"*"*32} searching again ({i+1}) {"*"*32}')
-	print(f'{"*"*32} _query_: {query} {"*"*32}\n')
+	print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 	tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', max_id=next_id, lang='en')
 	for t in tweets['statuses']:
 		if t['is_quote_status'] == False and len(t['entities']['user_mentions']) == 0:
@@ -67,4 +76,4 @@ for i in range(3):
 
 			reply(t)
 
-			sleep(randint(64,128))
+			sleep(randint(32,64))
