@@ -10,6 +10,11 @@ twit = Twitter(auth=oauth, retry=1)
 
 chain = MarkovChain()
 
+def speak(text):
+	speech = gTTS(text=text, lang='en', slow=False)
+	speech.save('speech.mp3')
+	os.system('mpg123 -q speech.mp3')
+
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
 num = 28
 for i in range(num):
@@ -44,9 +49,7 @@ for i in range(num):
 	# else:
 	# 	tweet = chain.generate_tweet(follow=True)
 	print(f'-t: {tweet}')
-	t_speech = gTTS(text=tweet, lang='en', slow=False)
-	t_speech.save('tweet.mp3')
-	os.system('mpg321 -q tweet.mp3')
+	speak(tweet)
 	twit.statuses.update(status=tweet)
 
 	if i < num - 1:
@@ -55,7 +58,5 @@ for i in range(num):
 		when = dt.datetime.now(tz=dt.timezone(dt.timedelta(hours=-8))) + delta
 		delay_text = f'delay: {delay} seconds (next tweet at {when.strftime("%H:%M:%S")})'
 		print(delay_text, '\n')
-		d_speech = gTTS(text=delay_text, lang='en', slow=False)
-		d_speech.save('delay.mp3')
-		os.system('mpg321 -q delay.mp3')
+		speak(delay_text)
 		time.sleep(delay)
