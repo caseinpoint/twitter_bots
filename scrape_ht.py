@@ -52,8 +52,9 @@ chain = MarkovChain()
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=2)
 
-search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheguru', 'shiva', 'elohim', 'vishnu', 'GuruNanak']
-# search_terms = ['jesus', 'christ', 'jesuschrist', 'jesussaves', 'jesusheals', 'jesusislord', 'holyspirit', 'christianity', 'jesuslovesyou', 'jesusfreak']
+# search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheguru', 'shiva', 'elohim', 'vishnu', 'GuruNanak', 'GuruGranthSahib']
+# search_terms = ['jesus', 'christ', 'jesuschrist', 'jesussaves', 'jesusheals', 'jesusislord', 'holyspirit', 'christianity', 'jesuslovesyou', 'ilovejesus']
+search_terms = ['algorithm', 'datastructures', 'python', 'java', 'golang', 'datascience', 'coding', 'opensource', 'sourcecode', 'machinelearning', 'programming']
 # 	*** train on old tweets before scraping newage ***
 # chain.train_on_file('training_txt/williamson_tweets.txt')
 # chain.train_on_file('training_txt/chopra_tweets.txt')
@@ -62,7 +63,6 @@ search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheg
 # search_terms = ['psychedelics', 'cannabis', 'magicmushrooms ', 'dmt', 'lsd', 'psilocybin', 'ayahuasca', 'psychonaut', 'acid', 'peyote']
 # search_terms = ['epistemology', 'ontology', 'atheism', 'humanism', 'godless', 'secularism', 'skeptic', 'athiest', 'humanist', 'antitheist', 'freedomfromreligion', 'secular', 'agnostic']
 # search_terms = ['rpg', 'ttrpg', 'dnd', 'dnd5e', 'pathfinder', '13thage', 'tabletop', 'dungeonmaster', 'dungeonsanddragons', 'tabletoprpg']
-# search_terms = ['algorithm', 'datastructures', 'python', 'java', 'golang', 'database', 'cplusplus', 'opensource', 'kotlin', 'machinelearning', 'artificialintelligence', 'augmentedreality']
 # search_terms = ['mentalhealth', 'depression', 'anxiety', 'therapy', 'behavioraltherapy', 'EndTheStigma', 'SuicideAwareness', 'SuicidePrevention', 'mentalillness', 'depressionfeelslike']
 # search_terms = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
 
@@ -90,13 +90,13 @@ for term in search_terms:
 
 chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
 
-chain.save_training('bin/twitter/allgods.bin')
+# chain.save_training('bin/twitter/allgods.bin')
 # chain.save_training('bin/twitter/jesusfreak.bin')
+chain.save_training('bin/twitter/coding.bin')
 # chain.save_training('bin/twitter/newage.bin')
 # chain.save_training('bin/twitter/psychonaut.bin')
 # chain.save_training('bin/twitter/reason.bin')
 # chain.save_training('bin/twitter/dnd.bin')
-# chain.save_training('bin/twitter/coding.bin')
 # chain.save_training('bin/twitter/mentalhealth.bin')
 # chain.save_training('bin/twitter/zodiac.bin')
 print('Sample tweet:', chain.generate_tweet())

@@ -6,7 +6,7 @@ SPLIT = re.compile('[“”"\s\d,.!?;:/—()[\]]')
 w_count = 0
 all_words = {}
 
-read_name = 'free_will.txt'
+read_name = 'quran.txt'
 
 with open(file=read_name, mode='r') as read_file:
 	line = read_file.readline()

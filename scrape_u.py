@@ -7,7 +7,7 @@ from markov_chain import MarkovChain
 from markov_algorithms import *
 
 EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|#rape|#raping|#trump|#maga|#pedophile|#fakenews|nigger', re.I)
-TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\]{}-]', re.I)
+TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\\]{}-]', re.I)
 RETWEET = re.compile(r'\s?RT\s')
 USER_NAME = re.compile(r'@\S+', re.I)
 LINKS = re.compile(r'https?\S*', re.I)
@@ -32,9 +32,10 @@ def fix_exclamation(matchobj):
 	fix = matchobj.group(0).split('!')
 	return '! '.join(fix)
 
+# search_terms = ['rezaaslan', 'DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV']
+search_terms = ['FFRF', 'AmericanAtheist', 'SamHarrisOrg', 'VicedRhino', 'holykoolaid', 'paulogia0', 'magnabosco', 'Prophet_of_Zod', 'hemantmehta', 'telltaleatheist', 'DearMrAtheist']
 # search_terms = ['npr', 'nprpolitics', 'MSNBC', 'MSNBC_Breaking', 'CNN', 'BBCWorld', 'BBCBreaking', 'MotherJones', 'thehill', 'MoveOn', 'NBCNews', 'NBCNewsNow']
 # search_terms = ['DeepakChopra', 'chopracenter', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain', 'NativeAmWisdom', 'CrystalWind']
-search_terms = ['DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV']
 # search_terms = ['Pontifex', 'usccbfreedom', 'churchofengland', 'UMChurch', 'advmission', 'NABFellowship', 'Presbyterian', 'ELCA', 'UCC_Official']
 # search_terms = ['realDonaldTrump', 'IvankaTrump', 'FLOTUS', 'DonaldJTrumpJr', 'EricTrump', 'TiffanyATrump', 'TeamTrump', 'Mike_Pence', 'VP', 'Scavino45', 'WomenforTrump']
 # search_terms = ['MarkovChurch']
@@ -69,9 +70,10 @@ chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001),
 
 print('Sample tweet:', chain.generate_tweet())
 
+# chain.save_training('bin/twitter/apologists.bin')
+chain.save_training('bin/twitter/atheists.bin')
 # chain.save_training('bin/twitter/news.bin')
 # chain.save_training('bin/twitter/newagers.bin')
-chain.save_training('bin/twitter/apologists.bin')
 # chain.save_training('bin/twitter/churches.bin')
 # chain.save_training('bin/twitter/trumpsterfire.bin')
 # chain.save_training('bin/twitter/meta.bin')
