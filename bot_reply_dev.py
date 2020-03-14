@@ -14,10 +14,11 @@ twit = Twitter(auth=oauth, retry=1)
 replies = 0
 # query = '(#MarkovChain)'
 query = '(#developer OR #algorithm OR #datastructures OR #python OR #java OR #golang OR #datascience OR #coding OR #opensource OR #sourcecode OR #machinelearning OR #programming)'
+print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 
 def reply(tweet):
-	global chain, replies
-	t_words = sorted(split(r'[^a-zA-Z#]', tweet['full_text']), key=lambda w: len(w), reverse=True)
+	global replies
+	t_words = sorted(split(r'[^a-zA-Z]', tweet['full_text']), key=lambda w: len(w), reverse=True)
 	begin = None
 	for word in t_words:
 		if len(word) > 0 and word.lower() in chain.tree:
@@ -39,7 +40,7 @@ def reply(tweet):
 
 tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', lang='en')
 for t in tweets['statuses']:
-	if t['user']['id'] != 1204948499005001728:
+	if t['is_quote_status'] == False and t['user']['id'] != 1204948499005001728:
 		replies += 1
 		print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
 		print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')
@@ -48,7 +49,7 @@ for t in tweets['statuses']:
 
 		sleep(randint(64,128))
 
-for i in range(9):
+for i in range(4):
 	if 'next_results' not in tweets['search_metadata']:
 		break
 	next_id = split(r'\D+', tweets['search_metadata']['next_results'])[1]
@@ -56,7 +57,7 @@ for i in range(9):
 	print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 	tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', max_id=next_id, lang='en')
 	for t in tweets['statuses']:
-		if t['user']['id'] != 1204948499005001728:
+		if t['is_quote_status'] == False and t['user']['id'] != 1204948499005001728:
 			replies += 1
 			print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
 			print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')

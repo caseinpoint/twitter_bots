@@ -49,12 +49,12 @@ for i in range(num):
 	# 	chain.load_training('bin/follow_me.bin')
 
 	# if category is not None:
-	tweet = chain.generate_tweet(append_tag=f'#MarkovChain.\n[Category: #{category}]')
+	tweet = chain.generate_tweet(append_tag=f'#MarkovChain.\n\n[Category: #{category}]')
 	# else:
 	# 	tweet = chain.generate_tweet(follow=True)
 	print(f'-t: {tweet}')
 	twit.statuses.update(status=tweet)
-	speak(tweet)
+	# speak(tweet)
 
 	if i < num - 1:
 		delay = random.randint(1024,2048)
@@ -62,5 +62,6 @@ for i in range(num):
 		when = dt.datetime.now(tz=dt.timezone(dt.timedelta(hours=-8))) + delta
 		delay_text = f'delay: {delay} seconds (next tweet at {when.strftime("%H:%M:%S")})'
 		print(delay_text, '\n')
-		speak(delay_text)
-		time.sleep(delay - 8)
+		# speak(delay_text)
+		# time.sleep(delay - 10)
+		time.sleep(delay)
