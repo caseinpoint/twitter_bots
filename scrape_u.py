@@ -33,7 +33,7 @@ def fix_exclamation(matchobj):
 	return '! '.join(fix)
 
 # search_terms = ['rezaaslan', 'DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV']
-search_terms = ['FFRF', 'AmericanAtheist', 'SamHarrisOrg', 'VicedRhino', 'holykoolaid', 'paulogia0', 'magnabosco', 'Prophet_of_Zod', 'hemantmehta', 'telltaleatheist', 'DearMrAtheist']
+search_terms = ['FFRF', 'AmericanAtheist', 'SamHarrisOrg', 'VicedRhino', 'holykoolaid', 'paulogia0', 'magnabosco', 'Prophet_of_Zod', 'hemantmehta', 'telltaleatheist', 'DearMrAtheist', 'americnhumanist']
 # search_terms = ['npr', 'nprpolitics', 'MSNBC', 'MSNBC_Breaking', 'CNN', 'BBCWorld', 'BBCBreaking', 'MotherJones', 'thehill', 'MoveOn', 'NBCNews', 'NBCNewsNow']
 # search_terms = ['DeepakChopra', 'chopracenter', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain', 'NativeAmWisdom', 'CrystalWind']
 # search_terms = ['Pontifex', 'usccbfreedom', 'churchofengland', 'UMChurch', 'advmission', 'NABFellowship', 'Presbyterian', 'ELCA', 'UCC_Official']

@@ -19,31 +19,35 @@ print('*' * 22, 'tweeting at random intervals', '*' * 22)
 num = 28
 for i in range(num):
 	print('~i:', i)
-	if i % 7 == 0:
+	if i % 8 == 0:
 		category = 'newtestament'
 		chain.load_training('bin/new_testament.bin')
-	elif i % 7 == 1:
+	elif i % 8 == 1:
 		# category = 'christians'
 		# chain.load_training('bin/twitter/jesusfreak.bin')
 		category = 'apologists'
 		chain.load_training('bin/twitter/apologists.bin')
-	elif i % 7 == 2:
+	elif i % 8 == 2:
 		category = 'quran'
 		chain.load_training('bin/quran.bin')
 		# category = 'tao'
 		# chain.load_training('bin/tao.bin')
-	elif i % 7 == 3:
+	elif i % 8 == 3:
 		category = 'allgods'
 		chain.load_training('bin/twitter/allgods.bin')
-	elif i % 7 == 4:
+	elif i % 8 == 4:
 		category = 'deepakchopra'
 		chain.load_training('bin/chopra.bin')
-	elif i % 7 == 5:
+	elif i % 8 == 5:
 		category = 'samharris'
 		chain.load_training('bin/harris.bin')
-	else:
+	elif i % 8 == 6:
 		category = 'atheists'
 		chain.load_training('bin/twitter/atheists.bin')
+	else:
+		category = 'programming'
+		chain.load_training('bin/programming.bin')
+
 	# else:
 	# 	category = None
 	# 	chain.load_training('bin/follow_me.bin')

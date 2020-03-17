@@ -3,7 +3,8 @@ from re import split
 from time import sleep
 from markov_chain import MarkovChain
 chain = MarkovChain()
-chain.load_training('bin/twitter/coding.bin')
+# chain.load_training('bin/twitter/coding.bin')
+chain.load_training('bin/programming.bin')
 
 from twitter import OAuth, Twitter
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -40,7 +41,8 @@ def reply(tweet):
 
 tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', lang='en')
 for t in tweets['statuses']:
-	if t['is_quote_status'] == False and t['user']['id'] != 1204948499005001728:
+	# if t['is_quote_status'] == False and
+	if t['user']['id'] != 1204948499005001728: # (my user ID)
 		replies += 1
 		print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
 		print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')
@@ -57,7 +59,7 @@ for i in range(4):
 	print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 	tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', max_id=next_id, lang='en')
 	for t in tweets['statuses']:
-		if t['is_quote_status'] == False and t['user']['id'] != 1204948499005001728:
+		if t['user']['id'] != 1204948499005001728:
 			replies += 1
 			print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
 			print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')
