@@ -16,7 +16,7 @@ def speak(text):
 	os.system('mpg123 -q speech.mp3')
 
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
-num = 28
+num = 32
 for i in range(num):
 	print('~i:', i)
 	if i % 8 == 0:

@@ -52,9 +52,9 @@ chain = MarkovChain()
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=2)
 
-# search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheguru', 'shiva', 'elohim', 'vishnu', 'GuruNanak', 'GuruGranthSahib']
+search_terms = ['jesus', 'brahma', 'buddha', 'muhammad', 'dao', 'shinto', 'waheguru', 'shiva', 'elohim', 'vishnu', 'GuruNanak', 'GuruGranthSahib']
 # search_terms = ['jesus', 'christ', 'jesuschrist', 'jesussaves', 'jesusheals', 'jesusislord', 'holyspirit', 'christianity', 'jesuslovesyou', 'ilovejesus']
-search_terms = ['algorithm', 'datastructures', 'python', 'java', 'golang', 'datascience', 'coding', 'opensource', 'sourcecode', 'machinelearning', 'programming']
+# search_terms = ['algorithm', 'datastructures', 'python', 'java', 'golang', 'datascience', 'coding', 'opensource', 'sourcecode', 'machinelearning', 'programming']
 # 	*** train on old tweets before scraping newage ***
 # chain.train_on_file('training_txt/williamson_tweets.txt')
 # chain.train_on_file('training_txt/chopra_tweets.txt')
@@ -90,9 +90,9 @@ for term in search_terms:
 
 chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
 
-# chain.save_training('bin/twitter/allgods.bin')
+chain.save_training('bin/twitter/allgods.bin')
 # chain.save_training('bin/twitter/jesusfreak.bin')
-chain.save_training('bin/twitter/coding.bin')
+# chain.save_training('bin/twitter/coding.bin')
 # chain.save_training('bin/twitter/newage.bin')
 # chain.save_training('bin/twitter/psychonaut.bin')
 # chain.save_training('bin/twitter/reason.bin')

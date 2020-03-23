@@ -20,10 +20,10 @@ replies = 0
 def reply(tweet):
 	global replies
 	if replies % 3 == 0:
-		# chain.load_training('bin/harris.bin')
-		# print('_source_: harris')
-		chain.load_training('bin/quran_testament.bin')
-		print('_source_: quran_testament')
+		chain.load_training('bin/harris.bin')
+		print('_source_: harris')
+		# chain.load_training('bin/quran_testament.bin')
+		# print('_source_: quran_testament')
 	elif replies % 3 == 1:
 		# chain.load_training('bin/chopra.bin')
 		# print('_source_: chopra')
@@ -58,14 +58,14 @@ def reply(tweet):
 tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', lang='en')
 
 for t in tweets['statuses']:
-	if t['is_quote_status'] == False and len(t['entities']['user_mentions']) == 0:
-		replies += 1
-		print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
-		print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')
+	# if t['is_quote_status'] == False and len(t['entities']['user_mentions']) == 0:
+	replies += 1
+	print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
+	print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')
 
-		reply(t)
+	reply(t)
 
-		sleep(randint(64,128))
+	sleep(randint(128,256))
 
 for i in range(4):
 	if 'next_results' not in tweets['search_metadata']:
@@ -75,11 +75,11 @@ for i in range(4):
 	print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 	tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', max_id=next_id, lang='en')
 	for t in tweets['statuses']:
-		if t['is_quote_status'] == False and len(t['entities']['user_mentions']) == 0:
-			replies += 1
-			print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
-			print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')
+		# if t['is_quote_status'] == False and len(t['entities']['user_mentions']) == 0:
+		replies += 1
+		print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
+		print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')
 
-			reply(t)
+		reply(t)
 
-			sleep(randint(64,128))
+		sleep(randint(128,256))
