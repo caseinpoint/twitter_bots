@@ -6,7 +6,7 @@ SPLIT = re.compile('[“”"\s\d,.!?;:/—()[\]]')
 w_count = 0
 all_words = {}
 
-read_name = 'codinginterview.txt'
+read_name = 'shakespeare.txt'
 
 with open(file=read_name, mode='r') as read_file:
 	line = read_file.readline()

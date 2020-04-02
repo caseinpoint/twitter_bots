@@ -30,8 +30,6 @@ for i in range(num):
 	elif i % 8 == 2:
 		category = 'quran'
 		chain.load_training('bin/quran.bin')
-		# category = 'tao'
-		# chain.load_training('bin/tao.bin')
 	elif i % 8 == 3:
 		category = 'allgods'
 		chain.load_training('bin/twitter/allgods.bin')
@@ -45,8 +43,10 @@ for i in range(num):
 		category = 'atheists'
 		chain.load_training('bin/twitter/atheists.bin')
 	else:
-		category = 'programming'
-		chain.load_training('bin/programming.bin')
+		# category = 'programming'
+		# chain.load_training('bin/programming.bin')
+		category = 'shakespeare'
+		chain.load_training('bin/shakespeare.bin')
 
 	# else:
 	# 	category = None
@@ -63,9 +63,9 @@ for i in range(num):
 	if i < num - 1:
 		delay = random.randint(1024,2048)
 		delta = dt.timedelta(seconds=delay)
-		when = dt.datetime.now(tz=dt.timezone(dt.timedelta(hours=-8))) + delta
+		when = dt.datetime.now(tz=dt.timezone(dt.timedelta(hours=-7))) + delta
 		delay_text = f'delay: {delay} seconds (next tweet at {when.strftime("%H:%M:%S")})'
 		print(delay_text, '\n')
 		# speak(delay_text)
-		# time.sleep(delay - 10)
+		# time.sleep(delay - 12)
 		time.sleep(delay)
