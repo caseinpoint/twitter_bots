@@ -14,7 +14,7 @@ twit = Twitter(auth=oauth, retry=1)
 
 replies = 0
 # query = '(#MarkovChain)'
-query = '(#developer OR #algorithm OR #datastructures OR #python OR #java OR #golang OR #datascience OR #coding OR #opensource OR #sourcecode OR #machinelearning OR #programming)'
+query = '(#markovchain OR #developer OR #algorithm OR #datastructures OR #python OR #java OR #golang OR #datascience OR #coding OR #opensource OR #sourcecode OR #machinelearning OR #programming)'
 print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 
 def reply(tweet):

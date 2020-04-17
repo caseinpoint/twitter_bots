@@ -31,22 +31,24 @@ for i in range(num):
 		category = 'quran'
 		chain.load_training('bin/quran.bin')
 	elif i % 8 == 3:
-		category = 'allgods'
-		chain.load_training('bin/twitter/allgods.bin')
-	elif i % 8 == 4:
+		# category = 'allgods'
+		# chain.load_training('bin/twitter/allgods.bin')
 		category = 'deepakchopra'
 		chain.load_training('bin/chopra.bin')
-	elif i % 8 == 5:
+	elif i % 8 == 4:
 		category = 'samharris'
 		chain.load_training('bin/harris.bin')
-	elif i % 8 == 6:
+	elif i % 8 == 5:
 		category = 'atheists'
 		chain.load_training('bin/twitter/atheists.bin')
+	elif i % 8 == 6:
+		category = 'shakespeare'
+		chain.load_training('bin/shakespeare.bin')
 	else:
 		# category = 'programming'
 		# chain.load_training('bin/programming.bin')
-		category = 'shakespeare'
-		chain.load_training('bin/shakespeare.bin')
+		category = 'news'
+		chain.load_training('bin/twitter/news.bin')
 
 	# else:
 	# 	category = None
