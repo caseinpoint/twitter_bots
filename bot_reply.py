@@ -11,8 +11,8 @@ from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECR
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
-query = '(#mindset OR #magickal OR #occult OR #namaste OR #oneness OR #witch OR #meditation OR #energyhealing OR #wicca OR #astrology OR #chakras OR #divination OR #numerology)'
-# query = '(#jesusheals OR #jesus OR #christ OR #christisrisen OR #jesussaves OR #yahweh OR #holyspirit OR #heisrisen OR #jesuslovesyou OR #jesusislord)'
+# query = '(#mindset OR #magickal OR #occult OR #namaste OR #oneness OR #witch OR #dimensions OR #energyhealing OR #wicca OR #astrology OR #chakras OR #divination OR #numerology)'
+query = '(#jesusheals OR #jesus OR #christ OR #christianity OR #jesussaves OR #yahweh OR #holyspirit OR #jesuslovesyou OR #jesusislord)'
 print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 
 replies = 0
@@ -25,15 +25,15 @@ def reply(tweet):
 		# chain.load_training('bin/quran_testament.bin')
 		# print('_source_: quran_testament')
 	elif replies % 3 == 1:
-		chain.load_training('bin/chopra.bin')
-		print('_source_: chopra')
-		# chain.load_training('bin/new_testament.bin')
-		# print('_source_: new_testament')
+		# chain.load_training('bin/chopra.bin')
+		# print('_source_: chopra')
+		chain.load_training('bin/new_testament.bin')
+		print('_source_: new_testament')
 	else:
-		chain.load_training('bin/waking_meta.bin')
-		print('_source_: waking_meta')
-		# chain.load_training('bin/quran.bin')
-		# print('_source_: quran')
+		# chain.load_training('bin/waking_meta.bin')
+		# print('_source_: waking_meta')
+		chain.load_training('bin/quran.bin')
+		print('_source_: quran')
 	# r'[^a-zA-Z#]' or r'\W'
 	t_words = sorted(split(r'[^a-zA-Z#]', tweet['full_text']), key=lambda w: len(w), reverse=True)
 	begin = None
