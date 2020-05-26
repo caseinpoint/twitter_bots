@@ -6,6 +6,8 @@ twit = Twitter(auth=oauth, retry=1)
 
 followers = twit.followers.ids(user_id=1204948499005001728)
 following = twit.friends.ids(user_id=1204948499005001728)
+# maximum 5000 users, so if I ever have more than that many followers,
+# I'll need to add consecutive searches.
 
 to_follow = []
 to_delete = []
@@ -18,10 +20,10 @@ for usr_id in following['ids']:
 	if usr_id not in followers['ids']:
 		to_delete.append(usr_id)
 
-print(f'to_follow:\n{to_follow}\n')
-print(f'to_delete:\n{to_delete}\n')
-print('following and deleting...')
+print(f'to_follow ({len(to_follow)}):\n{to_follow}\n')
+print(f'to_delete ({len(to_follow)}):\n{to_delete}\n')
 
+print('following and deleting...')
 for usr_id in to_follow:
 	try:
 		twit.friendships.create(user_id=usr_id)
@@ -30,5 +32,4 @@ for usr_id in to_follow:
 
 for usr_id in to_delete:
 	twit.friendships.destroy(user_id=usr_id)
-
-print('success')
+print('done')
