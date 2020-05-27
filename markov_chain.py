@@ -85,7 +85,7 @@ class MarkovChain:
 		tweet = [word]
 		count_len = len(word) + 1
 
-		while count_len <= 140:
+		while count_len <= 200:
 			if word not in self.tree:
 				# word = random.choice(t_keys)
 				break
@@ -110,7 +110,7 @@ class MarkovChain:
 
 			count_len += len(word) + 1 # plus one for space
 
-			if count_len >= 48 and (word.endswith('.') or word.endswith('!') or word.endswith('?')):
+			if count_len >= 70 and (word.endswith('.') or word.endswith('!') or word.endswith('?')):
 				break
 
 		if tweet[0] != '@MarkovChurch':
