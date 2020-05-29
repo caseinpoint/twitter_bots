@@ -21,7 +21,7 @@ for usr_id in following['ids']:
 		to_delete.append(usr_id)
 
 print(f'to_follow ({len(to_follow)}):\n{to_follow}\n')
-print(f'to_delete ({len(to_follow)}):\n{to_delete}\n')
+print(f'to_delete ({len(to_delete)}):\n{to_delete}\n')
 
 print('following and deleting...')
 for usr_id in to_follow:

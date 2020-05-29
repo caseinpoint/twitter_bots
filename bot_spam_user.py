@@ -1,4 +1,4 @@
-user = 'ChristianDefORG'
+user = 'WordOnFire'
 print(f'spamming screen_name: {user}')
 
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -15,23 +15,27 @@ twit = Twitter(auth=oauth, retry=1)
 # USER_NAME = re.compile(r'@\S+', re.I)
 LINKS = re.compile(r'https?\S*', re.I)
 AMPERSAND = re.compile(r'&amp;', re.I)
+GT = re.compile(r'&gt;', re.I)
+LT = re.compile(r'&lt;', re.I)
 
 chain = MarkovChain()
 
-tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=True)
-for i in range(14):
+tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False)
+for i in range(19):
 	try:
-		tweets += twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=True, max_id=tweets[-1]['id']-1)
+		tweets += twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False, max_id=tweets[-1]['id']-1)
 	except Exception as e:
 		break
 print(f'# of tweets: {len(tweets)}')
 
 for t in tweets:
-	if 'retweeted_status' in t:
-		continue
+	# if 'retweeted_status' in t:
+	# 	continue
 	# tweet = USER_NAME.sub(' ', t['full_text'])
 	tweet = LINKS.sub(' ', t['full_text'])
 	tweet = AMPERSAND.sub('&', tweet)
+	tweet = GT.sub('>', tweet)
+	tweet = LT.sub('<', tweet)
 	chain.train(tweet)
 print(f'length of chain: {len(chain.tree)}\n')
 

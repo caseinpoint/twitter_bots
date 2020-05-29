@@ -8,7 +8,6 @@ from markov_algorithms import *
 
 EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|#rape|#raping|#trump|#maga|#pedophile|#fakenews|nigger', re.I)
 TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\\]{}-]', re.I)
-RETWEET = re.compile(r'\s?RT\s')
 USER_NAME = re.compile(r'@\S+', re.I)
 LINKS = re.compile(r'https?\S*', re.I)
 AMPERSAND = re.compile(r'&amp;', re.I)
@@ -47,11 +46,10 @@ chain = MarkovChain()
 
 for user in search_terms:
 	print(f'search_term: {user}')
-	tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', lang='en')
+	tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', include_rts=False, trim_user=True)
 	for t in tweets:
 		if EXCLUDE_WORDS.search(t['full_text']) is None:
 			tweet = TEXT_ONLY.sub(' ', t['full_text'])
-			tweet = RETWEET.sub(' ', tweet)
 			tweet = USER_NAME.sub(' ', tweet)
 			tweet = LINKS.sub(' ', tweet)
 			tweet = TYPO_HASHTAGS.sub(fix_hashtag, tweet)
