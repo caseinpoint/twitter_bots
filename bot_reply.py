@@ -11,8 +11,8 @@ from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECR
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
-# query = '(#magickal OR #occult OR #namaste OR #oneness OR #witch OR #dimensions OR #energyhealing OR #wicca OR #astrology OR #chakras OR #divination OR #numerology)'
-query = '(#jesusheals OR #bibleverse OR #deus OR #christianlove OR #jesussaves OR #yahweh OR #jesuslovesyou OR #jesusisking)'
+query = '(#starseed OR #magickal OR #occult OR #oneness OR #energyhealing OR #wicca OR #astrology OR #reiki OR #chakras OR #divination OR #numerology OR #mindfulness)'
+# query = '(#godisgood OR #jesusheals OR #bibleverse OR #biblequote OR #godisgreat OR #godislove OR #jesussaves OR #biblestudy OR #jesuslovesyou)'
 print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 
 replies = 0
@@ -20,20 +20,20 @@ replies = 0
 def reply(tweet):
 	global replies
 	if replies % 3 == 0:
+		chain.load_training('bin/waking_meta.bin')
+		print('_source_: waking_meta')
+		# chain.load_training('bin/quran_testament.bin')
+		# print('_source_: quran_testament')
+	elif replies % 3 == 1:
+		chain.load_training('bin/chopra.bin')
+		print('_source_: chopra')
+		# chain.load_training('bin/new_testament.bin')
+		# print('_source_: new_testament')
+	else:
 		chain.load_training('bin/harris.bin')
 		print('_source_: harris')
-	elif replies % 3 == 1:
-		# chain.load_training('bin/chopra.bin')
-		# print('_source_: chopra')
-		chain.load_training('bin/new_testament.bin')
-		print('_source_: new_testament')
-	else:
-		# chain.load_training('bin/waking_meta.bin')
-		# print('_source_: waking_meta')
 		# chain.load_training('bin/quran.bin')
 		# print('_source_: quran')
-		chain.load_training('bin/quran_testament.bin')
-		print('_source_: quran_testament')
 	# r'[^a-zA-Z#]' or r'\W'
 	t_words = sorted(split(r'[^a-zA-Z#]', tweet['full_text']), key=lambda w: len(w), reverse=True)
 	begin = None
@@ -55,7 +55,7 @@ def reply(tweet):
 
 	print(f'{"—"*64}\n')
 
-tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', lang='en')
+tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', lang='en', result_type='recent')
 
 for t in tweets['statuses']:
 	# if t['is_quote_status'] == False and
@@ -66,15 +66,15 @@ for t in tweets['statuses']:
 
 		reply(t)
 
-		sleep(randint(128,256))
+		sleep(randint(64,128))
 
-for i in range(4):
+for i in range(9):
 	if 'next_results' not in tweets['search_metadata']:
 		break
 	next_id = split(r'\D+', tweets['search_metadata']['next_results'])[1]
 	print(f'\n{"*"*32} searching again ({i+1}) {"*"*32}')
 	print(f'{"*"*16} _query_: {query} {"*"*16}\n')
-	tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', max_id=next_id, lang='en')
+	tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', lang='en', result_type='recent', max_id=next_id)
 	for t in tweets['statuses']:
 		# if t['is_quote_status'] == False and
 		if len(t['entities']['user_mentions']) < 10:
@@ -84,4 +84,4 @@ for i in range(4):
 
 			reply(t)
 
-			sleep(randint(128,256))
+			sleep(randint(64,128))

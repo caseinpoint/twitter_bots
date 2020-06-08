@@ -1,9 +1,9 @@
-user = 'WordOnFire'
-print(f'spamming screen_name: {user}')
+user = 'RandPaul'
+print(f'spamming screen_name: {user}\nscraping...')
 
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
-from markov_chain import MarkovChain
 from markov_algorithms import *
+from markov_chain import MarkovChain
 from random import randint
 import re
 from time import sleep
@@ -21,7 +21,7 @@ LT = re.compile(r'&lt;', re.I)
 chain = MarkovChain()
 
 tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False)
-for i in range(19):
+for i in range(24):
 	try:
 		tweets += twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False, max_id=tweets[-1]['id']-1)
 	except Exception as e:

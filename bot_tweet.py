@@ -39,16 +39,17 @@ for i in range(num):
 		category = 'samharris'
 		chain.load_training('bin/harris.bin')
 	elif i % 8 == 5:
-		category = 'atheists'
-		chain.load_training('bin/twitter/atheists.bin')
-	elif i % 8 == 6:
 		category = 'shakespeare'
 		chain.load_training('bin/shakespeare.bin')
-	else:
-		# category = 'programming'
-		# chain.load_training('bin/programming.bin')
+	elif i % 8 == 6:
 		category = 'news'
 		chain.load_training('bin/twitter/news.bin')
+	else:
+		category = 'atheists'
+		# chain.load_training('bin/twitter/atheists.bin')
+		chain.load_training('bin/atheists.bin')
+		# category = 'programming'
+		# chain.load_training('bin/programming.bin')
 
 	# else:
 	# 	category = None
