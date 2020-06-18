@@ -17,7 +17,7 @@ test_chain.load_training(file_name)
 print(f'{"_"*16} file_name: {file_name} {"_"*16}')
 print(f'{"_"*16} len(test_chain.tree): {len(test_chain.tree)} {"_"*16}\n')
 for i in range(16):
-	print(test_chain.generate_tweet(start_with='children', append_tag='#MarkovChain', follow=False), '\n_\n')
+	print(test_chain.generate_tweet(start_with='lost', append_tag='#MarkovChain', follow=False), '\n_\n')
 
 # append_tag='#MarkovChain.'
 # that’s

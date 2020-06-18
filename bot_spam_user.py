@@ -1,4 +1,4 @@
-user = 'RandPaul'
+user = 'JoelOsteen'
 print(f'spamming screen_name: {user}\nscraping...')
 
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -67,4 +67,6 @@ for t in tweets:
 		print(f'{"!"*32}error{"!"*32}\n{e}\n')
 
 	print(f'{"—"*64}\n')
-	sleep(randint(128,256))
+	if replies == 100:
+		break
+	sleep(randint(2,8))
