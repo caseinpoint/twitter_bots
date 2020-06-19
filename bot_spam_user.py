@@ -1,4 +1,4 @@
-user = 'JoelOsteen'
+user = 'AmbJohnBolton'
 print(f'spamming screen_name: {user}\nscraping...')
 
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -25,6 +25,7 @@ for i in range(24):
 	try:
 		tweets += twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False, max_id=tweets[-1]['id']-1)
 	except Exception as e:
+		print(f'scraping stopped at i={i+1}')
 		break
 print(f'# of tweets: {len(tweets)}')
 
@@ -39,7 +40,7 @@ for t in tweets:
 	chain.train(tweet)
 print(f'length of chain: {len(chain.tree)}\n')
 
-chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
+# chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
 
 print(f'{"—"*64}\n')
 replies = 0
