@@ -1,6 +1,4 @@
-   CRACKING THE
-
-CODING INTERVIEW
+   CRACKING THE CODING INTERVIEW
 
 My Approach
 
@@ -1369,7 +1367,7 @@ key takeaways here is that it's not ju st about interview questions. Do projects
                                     solvinq problems.
 
     Begin applying to       ~     Review / update          ~     Create interview prep
-        companies.                     resume.                         grid (pg 32).
+        companies.                     resume.                         grid  .
 
                                                                      .
 
@@ -1388,8 +1386,8 @@ Do a final mock           . - - . - - Phone Interview:         1 Week
      t
 
  Rehearse stories         ---.   Re-read #Algorithm       - - - . Re-read Big 0 section
-from the interview              Approaches (pg 67).                              (pg 38).
-prep grid (pg 32).
+from the interview              Approaches  .                               .
+prep grid  .
 
                                                                t
 
@@ -1401,7 +1399,7 @@ from interview prep                                            interview questio
 t
 
 Continue to practice      ---.  Review Powers of 2       ---.  Day Of
- questions & review             table (pg 61). Print
+ questions & review             table  . Print
 your list of mistakes.          for a phone screen.              t
 
 Remember to talk out      .--   Be Confident (Not        . - - Wake up in plenty of
@@ -5035,7 +5033,7 @@ the #strings, copying them back to a #string only when necessary.
 A good exercise to practice #strings, #arrays, and general #data structures is to implement your own version of
 St ringBuilder, HashTable and #ArrayList.
 
-Additional Reading: Hash Table Collision Resolution (pg 636), Rabin-Karp Substring Search (pg 636).
+Additional Reading: Hash Table Collision Resolution  , Rabin-Karp Substring Search  .
 
 Interview Questions
 
@@ -5728,7 +5726,7 @@ One way to think about it is that a "balanced" tree really means something more 
 anced:' It's balanced enough to ensure O( log n) times for insert and find, but it's not necessarily as
 balanced as it could be.
 
-Two common types of balanced trees are red-black trees (pg 639) and AVL trees (pg 637). These are
+Two common types of balanced trees are red-black trees   and AVL trees  . These are
 discussed in more detail in the Advanced Topics section.
 
 Complete Binary Trees
@@ -6152,8 +6150,8 @@ Put another way: if our system could only support searching "friend of friend" p
 it could now likely support "friend of friend of friend of friend " paths. We can support paths that are twice
 as long.
 
-Additional Reading: Topological Sort (pg 632), Dijkstra's #Algorithm (pg 633), AVL Trees (pg 637), Red-
-BlackTrees (pg 639).
+Additional Reading: Topological Sort  , Dijkstra's #Algorithm  , AVL Trees  , Red-
+BlackTrees  .
 
 Interview Questions
 
@@ -6967,7 +6965,7 @@ heavier of the two. Or, if the balls are the same weight, pick the third one.
 If you're stuck, consider applying one of the approaches for solving #algorithm questions (starting on page
 67). Brainteasers are often nothing more than #algorithm questions with the technical aspects removed.
 Base Case and Build and Do It Yourself (DIY) can be especially useful.
-Additional Reading: Useful Math (pg 629).
+Additional Reading: Useful Math  .
 
 Interview Questions
 
@@ -7632,7 +7630,7 @@ This explanation might seem like overkill for such a simple problem, but t ruly 
 will make more difficult problems much easier. Going through the problems in this chapter, many of which
 use dynamic programming, will help solidify your understanding.
 
-Additional Reading: Proof by Induction (pg 631).
+Additional Reading: Proof by Induction  .
 
 Interview Questions
 
@@ -11065,7 +11063,7 @@ Chapter 17 I Hard
 
 1.1 Is Unique: Implement an #algorithm to determine if a #string has all unique characters. What if you
           cannot use additional #data structures?
-                                                                                                                                       pg90
+
 
 SOLUTION
 
@@ -11162,7 +11160,7 @@ the problem.
 1.2 Check Permutation: Given two #strings, write a method to decide if one is a permutation of the
          other.
 
-                                                                                                                                       pg90
+
 
 SOLUTION
 
@@ -11275,7 +11273,7 @@ size of the character set. We assumed that the character set was ASC//.
 
         Output: "Mr%2eJohn%2eSmith"
 
-                                                                         pg90
+
 
 SOLUTION
 
@@ -11350,7 +11348,7 @@ ment this in just one pass.
 
       Output: True (permutations:"taco cat'; "atco cta '; etc.)
 
-                                                                                         pg97
+
 
 SOLUTION
 
@@ -11655,7 +11653,7 @@ permutations in order to check if one is a palindrome.
          pale, bale -) true
          pale, bae -) false
 
-                                                                                                                           pg97
+
 
 SOLUTION
 
@@ -11863,7 +11861,7 @@ You don't necessarily need to "pick a side:'You can discuss the tradeoffs with y
          "compressed"string would not become smaller than the original #string, your method should return
          the original #string. You can assume the #string has only uppercase and lowercase letters (a - z).
 
-                                                                                                                                    pg91
+
 
 SOLUTION
 
@@ -11905,7 +11903,7 @@ This works. Is it efficient, though? Take a look at the runtime of this #code.
 
 The runtime is O(p + k2), where p is the size of the original #string and k is the number of character
 sequences. For example, if the #string is aabccdeeaa, then there are six character sequences. It's slow
-because #string concatenation operates in O( n2) time (see #StringBuilder on pg 89).
+because #string concatenation operates in O( n2) time (see #StringBuilder on  .
 
 We can fix this by using a #StringBuilder.
 
@@ -12023,7 +12021,7 @@ hits capacity. The capacity could be double what we ultimately need.
 
 1.7 Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in the image is 4
           bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
-                                                                                                                                            pg91
+
 
 SOLUTION
 
@@ -12109,7 +12107,7 @@ This #algorithm is O( N2 ), which is the best we can do since any #algorithm mus
 
 1.8 Zero Matrix: Write an #algorithm such that if an element in an MxN matrix is 0, its entire row and
          column are set to 0.
-                                                                                                                                            pg91
+
 
 SOLUTION
 
@@ -12342,7 +12340,7 @@ the #algorithm.
          of another. Given two #strings, 51 and 52, write #code to check if 52 is a rotation of 51 using only one
          call to isSubstring (e.g., Uwaterbottleuis a rotation of uerbottlewat U).
 
-                                                                                                                                    pg91
+
 
 SOLUTION
 
@@ -12399,7 +12397,7 @@ runs in O(A+B) time (on #strings of length Aand B), then the runtime of i5Rotati
          FOLLOW UP
          How would you solve this problem if a temporary buffer is not allowed?
 
-                                                                                            pg94
+
 
 SOLUTION
 
@@ -12481,7 +12479,7 @@ This #code runs in O( 1) space, but 0 (N 2 ) time.
 
 2.2 Return Kth to Last: Implement an #algorithm to find the kth to last element of a singly linked list.
 
-                                                                                                                                       pg223
+
 
 SOLUTION
 
@@ -12694,7 +12692,7 @@ This #algorithm takes O( n) time and O( 1) space.
          Input: the #node c from the linked list a - >b- >c - >d - >e- >f
          Resul t: noth ing is returned, but the new linked list looks like a -> b->d->e->f
 
-                                                                                 pg94
+
 
 SOLUTION
 
@@ -12740,7 +12738,7 @@ example, consider marking the #node as dummy.
 
         Output: 3 -) 1 -) 2 -) 113 -) 5 -) 5 -) 8
 
-                                                                               pg94
+
 
 SOLUTION
 
@@ -12913,7 +12911,7 @@ Solutions to Chapter 2 I Linked Lists
           Suppose the digits are stored in forward order. Repeat the above problem.
         Input: (6 -> 1 -> 7) + (2 -> 9 -> 5).Thatis,617 + 295.
          Output: 9 - > 1 - > 2.That is, 912 .
-                                                                                                                                       pg95
+
 
 SOLUTION
 
@@ -13159,7 +13157,7 @@ methods. This makes the #code cleaner and easier to read-a wise thing to do in y
 
 2.6 Palindrome: Implement a function to check if a linked list is a palindrome.
 
-                                                                                                                                           pg95
+
 
 SOLUTION
 
@@ -13546,7 +13544,7 @@ It's ugly, but it works.
           intersecting #node. Note that the intersection is defined based on reference, not value. That is, if the
           kth #node of the first linked list is the exact same #node (by reference) as the jth #node of the second
           linked list, then they are intersecting.
-                                                                                                                                           pg95
+
 
 SOLUTION
 Let's draw a picture of intersecting linked lists to get a better feel for what is going on.
@@ -13737,7 +13735,7 @@ additional space.
 
       Output: C
 
-                                                                                    pg95
+
 
 SOLUTION
 
@@ -13896,7 +13894,7 @@ Solutions to Chapter 2 I Linked Lists
 
       #Solutions to Stacks and Queues
 
-3.1 Three in One: Describe how you could use a single #array to implement three stacks.  pg98
+3.1 Three in One: Describe how you could use a single #array to implement three stacks.
 SOLUTION
 
 Like many problems, this one somewhat depends on how well we'd like to support these stacks. If we're
@@ -14389,7 +14387,7 @@ I #Solutions to Chapter 3 Stacks and Queues
 3.2 Stack Min: How would you design a stack wh ich, in addition to push and pop, has a function min
          which returns the minimum element? Push, pop and min should all operate in 0(1) time.
 
-                                                                                                                                       pg98
+
 
 SOLUTION
 
@@ -14547,7 +14545,7 @@ and the members within this stack.
          Implement a function popAt (int index) which performs a pop operation on a specific sub-
          stack.
 
-                                                                                                                                         pg99
+
 
 SOLUTION
 
@@ -14792,7 +14790,7 @@ that popAt can call. This will make your #code cleaner and give you the opportun
 eton of the #code before dealing with some of the details.
 
 3.4 Queue via Stacks: Implement a MyQueue class which implements a queue using two stacks.
-                                                                                                                                         pg99
+
 
 SOLUTION
 
@@ -14899,7 +14897,7 @@ details.They're much more concerned with your big picture understanding.
          an additional temporary stack, but you may not copy the elements into any other #data structure
           (such as an #array) .The stack supports the following operations: push, pop, peek, and isEmpty.
 
-                                                                                                                                       pg99
+
 
 SOLUTION
 
@@ -15012,7 +15010,7 @@ recursion.
          maintai n this system and implement operations such as enqueue, dequeueAny, dequeueDog,
          and dequeueCat. You may use the built-in LinkedList #data structure.
 
-                                                                                                                                       pg99
+
 
 SOLUTION
 
@@ -15169,7 +15167,7 @@ the same timestamp, then (by definition) we don't have an older animal and we co
 
 4.1 Route Between #Nodes: Given a directed graph, design an #algorithm to find out whether there is a
          route between two #nodes.
-                                                                                                                     pg 109
+
 
 SOLUTION
 
@@ -15254,7 +15252,7 @@ neighbors.
 4.2 Minimal Tree: Given a sorted (increasing order) #array with unique integer elements, write an
           #algorithm to create a binary search tree with minimal height.
 
-                                                                                                                     pg 109
+
 
 SOLUTION
 
@@ -15322,7 +15320,7 @@ Be sure to test these parts of the #code very thoroughly.
 4.3 List of Depths: Given a binary tree, design an #algorithm which creates a linked list of all the #nodes
         at each depth (e.g., if you have a tree with depth D, you'll have Dlinked lists).
 
-                                                                                                                 pg 709
+
 
 SOLUTION
 
@@ -15453,7 +15451,7 @@ use more #data, they are equally efficient when it comes to "big 0:'
          this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any
          #node never differ by more than one.
 
-                                                                                                                                 pg 110
+
 
 SOLUTION
 
@@ -15559,7 +15557,7 @@ The #code below implements this #algorithm.
 
 This #code runs in 0 (N) time and 0 (H) space, where His the height of the tree.
 
-4.5 Validate 8ST: Implement a function to check if a binary tree is a binary search tree.  pg 110
+4.5 Validate 8ST: Implement a function to check if a binary tree is a binary search tree.
 
 SOLUTION
 
@@ -15766,7 +15764,7 @@ null cases, are well handled.
 4.6 Successor: Write an #algorithm to find the "next" #node (i.e., in-order successor) of a given #node in a
           binary search tree. You may assume that each #node has a link to its parent.
 
-                                                                                                                                         pg 110
+
 
 SOLUTION
 
@@ -15895,7 +15893,7 @@ I #Solutions to Chapter 4 Trees and Graphs
              dependencies: (a, d), (f, b), (b, d), (f, a), (d, c)
          Output: f, e, a, b, d, c
 
-                                                                                                                     pg 110
+
 
 SOLUTION
 
@@ -16417,7 +16415,7 @@ every edge (a, b), a appears before b in the linear order.
 4.8 First Common Ancestor: Design an #algorithm and wri te #code to find the first common ancestor
          of two #nodes in a binary tree. Avoid storing additional #nodes in a #data structure. NOTE: This is not
          necessarily a binary search tree.
-                                                                                                                                           pg 770
+
 
 SOLUTION
 
@@ -16885,7 +16883,7 @@ be to first search through the entire tree to make sure that both #nodes exist.
 
          Input:
 
-         Output: {2, 1, 3}, {2, 3, 1}                                         pg 110
+         Output: {2, 1, 3}, {2, 3, 1}
 
 SOLUTION
 It's useful to kick off this question with a good example.
@@ -17112,7 +17110,7 @@ implementations of multiple #algorithms straight in your head.
          A tree T2 is a subtree of T1 if there exists a #node n in Tl such that the subtree of n is identical to T2 .
          That is, if you cut off the tree at #node n, the two trees would be identical.
 
-                                                                                                                     pg 111
+
 
 SOLUTION
 
@@ -17318,7 +17316,7 @@ your interviewer.
           to insert, find, and delete, has a method getRandomNode() which returns a random #node
           from the tree. All #nodes should be equally likely to be chosen. Design and implement an #algorithm
           for get Ra ndomNode, and explain how you would implement the rest of the methods.
-                                                                                                                                 pg 111
+
 
 SOLUTION
 
@@ -17650,7 +17648,7 @@ runtime whether the tree is balanced or not.
          might be positive or negative) . Design an #algorithm to count the number of paths that sum to a
          given value.The path does not need to start or end at the root or a leaf, but it must go downwards
          (traveling only from parent #nodes to child #nodes).
-                                                                                                                                 pg 111
+
 
 SOLUTION
 
@@ -17952,7 +17950,7 @@ tree.
 
    Output: N = 18881881188
 
-                                                            pg 115
+
 
 SOLUTION
 
@@ -18016,7 +18014,7 @@ code. It's extremely easy to wind up with off-by-one errors.
 5.2 Binary to #String: Given a real number between 8 and 1 (e.g., 0.72) that is passed in as a double,
           print the binary representation. If the number cannot be represented accurately in binary with at
           most 32 characters, print "ERROR:'
-                                                                                                                     pg 776
+
 
 SOLUTION
 
@@ -18158,7 +18156,7 @@ through them in your interview.
 
         Output: 8
 
-                                                                                                     pg 116
+
 
 SOLUTION
 
@@ -18359,7 +18357,7 @@ The runtime of this #algorithm is still 0 (b), but we use only 0 (1) additional 
 
 5.4 Next Number: Given a positive integer, print the next smallest and the next largest number that
           have the same number of 1 bits in their binary representation .
-                                                                                                                                           pg 116
+
 
 SOLUTION
 
@@ -18670,7 +18668,7 @@ Again, this is very easy to implement.
 Whew! Don't worry, you wouldn't be expected to get all this in an interview-at least not without a lot of
 help from the interviewer.
 
-5.5 Debugger: Explain what the following #code does: n & (n-1)) == 0).                                 pg 116
+5.5 Debugger: Explain what the following #code does: n & (n-1)) == 0).
                                                                               e, then nand n -1 never
 SOLUTION
 We can work backwards to solve this question.
@@ -18722,7 +18720,7 @@ So, we have our answer: ( (n & (n -1)) == 0) checks if n is a power of 2 (or if 
        Input: 29 (or: 111(1), 15 (or: (1111)
         Output: 2
 
-                                                                                                                       pg 116
+
 
 SOLUTION
 
@@ -18774,7 +18772,7 @@ for your interviews.
 
 5.7 Pairwise Swap: Write a program to swap odd and even bits in an integer with as few instructions as
           possible (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, and so on).
-                                                                                                                       pg 176
+
 
 SOLUTION
 
@@ -18814,7 +18812,7 @@ would need to change the mask. The logic, however, would rema in the same.
         The method signature should look something like:
          drawL i ne(byte[] screen, int width, int Xl , int x2 , int y)
 
-                                                                                                                                 pg 116
+
 
 SOLUTION
 
@@ -18916,7 +18914,7 @@ bug-free.
           1.1 grams. Given a scale that provides an exact measurement, how would you find the heavy bottle?
           You can only use the scale once.
 
-                                                                                                                         pg 722
+
 
 SOLUTION
 
@@ -18967,7 +18965,7 @@ Solutions to Chapter 6 I Math and Logic Puzzles
           If p is the probability of making a particular shot, for which values of p should you pick one game
           or the other?
 
-                                                                                                                     pg 123
+
 
 SOLUTION
 
@@ -19031,7 +19029,7 @@ If P = a, a. 5, or 1, then P(Game 1) = P(Game 2), so it doesn't matter which gam
           You are given 31 dominos, and a single domino can cover exactly two squares. Can you use the 31
           dominos to cover the entire board? Prove your answer (by providing an example or showing why
           it's impossible).
-                                                                                                                                    pg723
+
 
 SOLUTION
 
@@ -19057,7 +19055,7 @@ squares and 32 white squares. Hence, it is impossible.
           that each ant randomly picks a direction, with either direction being equally likely to be chosen, and
           that they walk at the same speed.
           Similarly, find the probability of collision with n ants on an n-vertex polygon.
-                                                                                                                                    pg 723
+
 
 SOLUTION
 
@@ -19091,7 +19089,7 @@ a collision, but there are 2n ways they can move in total. Therefore, in general
           no measuring cups) _How would you come up with exactly four quarts of water? Note that the jugs
           are oddly shaped, such that filling up exactly "half" of the jug would be impossible_
 
-                                                                                                                     pg 123
+
 
 SOLUTION
 
@@ -19126,7 +19124,7 @@ tively prime, you can measure any value between one and the sum of the jug sizes
           own (nor is anyone allowed to tell them). Additionally, they do not know how many people have
           blue eyes, although they do know that at least one person does. How many days will it take the
           blue-eyed people to leave?
-                                                                                                                                         pg 123
+
 
 SOLUTION
 
@@ -19163,7 +19161,7 @@ for the blue-eyed men to leave. All will leave on the same night.
           children until they have one girl, at which point they immediately stop-what will the gender ratio
           of the new generation be? (Assume that the odds of someone having a boy or a girl on any given
           pregnancy is equal.) Solve this out logically and then write a computer simulation of it.
-                                                                                                                                       pg 123
+
 
 SOLUTION
 
@@ -19324,7 +19322,7 @@ I #Solutions to Chapter 6 Math and Logic Puzzles
 6.8 The Egg Drop Problem: There is a building of 100 floors. If an egg drops from the Nth floor or
           above, it will break. If it's dropped from any floor below, it will not break. You 're given two eggs. Find
           N, while minimizing the number of drops for the worst case.
-                                                                                                                                  pg 724
+
 
 SOLUTION
 
@@ -19458,7 +19456,7 @@ This will involve the quadratic formula .
          the man toggles every i th locker. After his 100th pass in the hallway, in which he toggles only locker
          #100, how many lockers are open?
 
-                                                                                                                              pg 724
+
 
 SOLUTION
 
@@ -19497,7 +19495,7 @@ Therefore, there are 10 lockers open at the end of this process.
 
       Follow up: Write #code to simulate your approach.
 
-                                                        pg124
+
 
 SOLUTION
 
@@ -20097,7 +20095,7 @@ bottles.
 7.1 Deck of Cards: Design the #data structures for a generic deck of cards. Explain how you would
         subclass the #data structures to implement blackjack.
 
-                                                                                                                                              pg127
+
 
 SOLUTION
 
@@ -20355,7 +20353,7 @@ An executable, fully automated version of blackjack is provided in the downloada
          #data structures for this problem. Implement a method dispatchCall() which assigns a call to
          the first available employee.
 
-                                                                                                                 pg 127
+
 
 SOLUTION
 
@@ -20606,7 +20604,7 @@ This may seem like an awful lot of #code to write in an interview, and it is. We
 here than you would need. In a real interview, you would likely be much lighter on some of the details until
 you have time to fill them in.
 
-7.3 Jukebox: Design a musical jukebox using object-oriented principles.  pg727
+7.3 Jukebox: Design a musical jukebox using object-oriented principles.
 
 SOLUTION
 
@@ -20790,7 +20788,7 @@ well as other constraints, will shape the design of the jukebox classes.
 
 7.4 Parking Lot: Design a parking lot using object-oriented principles.
 
-                                                                         pg 727
+
 
 SOLUTION
 
@@ -21045,7 +21043,7 @@ behaviors, other than their sizes.
 A full implementation of this #code, including executable test #code, is provided in the downloadable #code
 attachment.
 
-7.S Online Book Reader: Design the #data structures for an online book reader system.       pg727
+7.S Online Book Reader: Design the #data structures for an online book reader system.
 SOLUTION
 
 Since the pro blem doesn't describe much about the functionality, let's assume we want to design a basic
@@ -21395,7 +21393,7 @@ main class from getting overwhelmingly lengthy.
          solve the puzzle. You can assume that you have a fitsWi th method which, when passed two
          puzzle edges, returns true if the two edges belong together.
 
-                                                                                                                             pg 728
+
 
 SOLUTION
 
@@ -21707,7 +21705,7 @@ Solutions to Chapter 7 I Object-Oriented Design
 
 7.7 Chat Server: Explain how you would design a chat server. In particular, provide details about the
           various backend components, classes, and methods. What would be the hardest problems to solve?
-                                                                                                                                pg 728
+
 
 SOLUTION
 
@@ -22009,7 +22007,7 @@ Clients can push #data to us-what if they try to DOS (denial of service) us? How
           of your opponent's pieces. The game ends when either user has no more valid moves. The win is
           assigned to the person with the most pieces. Implement the object-oriented design for Othello.
 
-                                                                                                                     pg 128
+
 
 SOLUTION
 
@@ -22256,7 +22254,7 @@ does care that you took the time to think about it and discuss the trade-offs.
 7.9 Circular #Array: Implement a CircularArray class that supports an #array-like #data structure which
          can be efficiently rotated. If possible, the class should use a generic type (also called a template), and
          should support iteration via the standard for (Obj 0 : circularArray) notation.
-                                                                                                                                       pg 128
+
 
 SOLUTION
 
@@ -22496,7 +22494,7 @@ Solutions to Chapter 7 I Object-Oriented Design
                                                                            1 1 1
                                                                          1 ? 1
 
-                                                                                            pg729
+
 
 SOLUTION
 
@@ -22724,7 +22722,7 @@ To place the bombs, we could randomly picka cell and then place a bomb if it's s
 pick a different location for it. The problem with this is that if there are a lot of bombs, it could get very slow.
 We could end up in a situation where we repeatedly pick cells with bombs.
 
-To get around this, we could take an approach similar to the card deck shuffling problem (pg 531). We
+To get around this, we could take an approach similar to the card deck shuffling problem  . We
 could place the Kbombs in the first Kcells and then shuffle all the cells around.
 
 Shuffling an #array operates by iterating through the #array from i = a through N-1. For each i , we pick a
@@ -22905,7 +22903,7 @@ Your implementation of these #algorithms could vary substantially depending on y
 7.11 File System: Explain the #data structures and #algorithms that you would use to design an in-memory
          file system. Illustrate with an example in #code where possible.
 
-                                                                                                                                            pg129
+
 
 SOLUTION
 
@@ -23108,7 +23106,7 @@ instanceof operator, but it does prohibit us from cleanly sorting files and dire
 
 7.12 Hash Table: Design and implement a hash table which uses chaining (linked lists) to handle
           collisions.
-                                                                                                                       pg729
+
 
 SOLUTION
 
@@ -23339,7 +23337,7 @@ large #array to hold items.
           steps at a time. Implement a method to count how many possible ways the child can run up the
           stairs.
 
-                                                                                                                 pg 134
+
 
 SOLUTION
 Let's think about this with the following question: What is the very last step that is done?
@@ -23459,7 +23457,7 @@ I #Solutions to Chapter 8 Recursion and Dynamic Programming
          the robot cannot step on them. Design an #algorithm to find a path for the robot from the top left to
          the bottom right.
 
-                                                                                                                                            pg 135
+
 
 SOLUTION
 
@@ -23648,7 +23646,7 @@ I #Solutions to Chapter 8 Recursion and Dynamic Programming
           FOLLOW UP
           What if the values are not distinct?
 
-                                                                                                                                 pg 135
+
 
 SOLUTION
 
@@ -23814,7 +23812,7 @@ Solutions to Chapter 8 I Recursion and Dynamic Programming
 Note that in the above #code, if the elements are all distinct, the method operates almost identically to the
 first #solution.
 
-8.4 Power Set: Write a method to return all subsets of a set.                                    pg 135
+8.4 Power Set: Write a method to return all subsets of a set.
 SOLUTION
 
 We should first have some reasonable expectations of our time and space complexity.
@@ -24000,7 +23998,7 @@ There's nothing substantially better or worse about this #solution compared to t
         the * operator (or / operator) . You can use addition, subtraction, and bit shifting, but you should
 
           minimize the number of those operations.
-                                                                                                                                 pg 135
+
 
 SOLUTION
 
@@ -24219,7 +24217,7 @@ This #algorithm will run in 0 (log s) time, where s is the smaller of the two nu
           (2) A disk is slid off the top of one tower onto another tower.
           (3) A disk cannot be placed on top of a smaller disk.
           Write a program to move the disks from the first tower to the last using Stacks.
-                                                                                                                             pg 735
+
 
 SOLUTION
 
@@ -24383,7 +24381,7 @@ cleaner in some respects.
 
 8.7 Permutations without Dups: Write a method to compute all permutations of a #string of unique
          chara ct ers .
-                                                                                                                                      pg735
+
 
 SOLUTION
 
@@ -24616,7 +24614,7 @@ For a discussion of the runtime of this #algorithm, see Example 12 on page 51 .
 8.8 Permutations with Duplicates: Write a method to compute all permutations of a #string whose
          characters are not necessarily unique. The list of permutations should not have duplicates.
 
-                                                                                                                                pg 735
+
 
 SOLUTION
 
@@ -24754,7 +24752,7 @@ rithm .
 
        () )), Output:  () ()), () () J () ( () ) J () () ()
 
-                                                                                            pg 136
+
 
 SOLUTION
 
@@ -24910,7 +24908,7 @@ string is guaranteed to be unique.
          That is, given a screen (represented by a two-dimensional #array of colors), a point, and a new color,
          fill in the surrounding area until the color changes from the original color.
 
-                                                                                                                                 pg 136
+
 
 SOLUTION
 
@@ -24980,7 +24978,7 @@ I #Solutions to Chapter 8 Recursion and Dynamic Programming
 8.11 Coins: Given an infinite number of quarters (25 cents), dimes (10 cents), nickels (5 cents), and
           pennies (1 cent), write #code to calculate the number of ways of representing n cents.
 
-                                                                                                                       pg736
+
 
 SOLUTION
 
@@ -25146,7 +25144,7 @@ alternative #data structures as well.
       so that none of them share the same row, column, or diagonal. In this case, "diagonal" means all
       diagonals, not just the two that bisect the board.
 
-                                                                                                    pg 136
+
 
 SOLUTION
 
@@ -25301,7 +25299,7 @@ I #Solutions to Chapter 8 Recursion and Dynamic Programming
          larger than the box above it in width, height. and depth. Implement a method to compute the
          height of the tallest possible stack. The height of a stack is the sum of the heights of each box.
 
-                                                                                                                                                pg 736
+
 
 SOLUTION
 
@@ -25557,7 +25555,7 @@ are symmetric, as they are in lines 15 and 16-18.
          countEval("1AalaI1", false) -> 2
          countEval("a&a&a&1A1Ia", true) - > 1a
 
-                                                                                                                                    pg 736
+
 
 SOLUTION
 
@@ -25840,7 +25838,7 @@ numbers. We would do the same thing for the right side.
           Describe the different methods you considered and why you would recommend your approach.
           Your service can use any technologies you wish, and can distribute the information to the client
           applications in any mechanism you choose.
-                                                                                                                             pg 144
+
 
 SOLUTION
 
@@ -25979,7 +25977,7 @@ Rather, it's to see how you design a system, and how you evaluate trade-offs.
 9.2 Social Network: How would you design the #data structures for a very large social network like
           Facebook or Linkedln? Describe how you would design an #algorithm to show the shortest path
           between two people (e.g., Me -> Bob -> Susan -> Jason -> You).
-                                                                                                                                    pg145
+
 
 SOLUTION
 
@@ -26364,7 +26362,7 @@ Other Follow-Up Questions:
 These are just a few of the follow-u p questions you or the interviewer could raise. There are many others.
 
 9.3 Web Crawler: If you were designing a web crawler, how would you avoid getting into infinite loops?
-                                                                                                                                 pg 145
+
 
 SOLUTION
 
@@ -26418,7 +26416,7 @@ I #Solutions to Chapter 9 System Design and Scalability
 
 9.4 Duplicate URLs: You have 10 billion URLs. How do you detect the duplicate documents? In this
           case, assume "duplicate" means that the URLs are identical.
-                                                                                                                                pg 745
+
 
 SOLUTION
 
@@ -26475,7 +26473,7 @@ Both are good #solutions, though, and both should be discussed with your intervi
           to cache the results of the most recent queries. Be sure to explain how you would update the cache
           when #data changes.
 
-                                                                                                                     pg 745
+
 
 SOLUTION
 
@@ -26734,7 +26732,7 @@ viewer about design criteria and demonstrating your general approach and methodo
           best-selling product under "Sports Equipment" and the #24th best-selling product under "Safety."
           Describe how you would design this system.
 
-                                                                                                                     pg74S
+                                                                                                                      S
 
 SOLUTION
 
@@ -26936,7 +26934,7 @@ detail on any specific aspect of the product.
 9.7 Personal Financial Manager: Explain how you would design a personal financial manager (like
           Mint.com). This system would connect to your bank accounts, analyze your spending habits, and
           make recommendations.
-                                                                                                                                           pg 145
+
 
 SOLUTION
 
@@ -27128,7 +27126,7 @@ Follow Up Questions
 
 9.8 Pastebin: Design a system like Pastebin, where a user can enter a piece of text and get a randomly
           generated URL for #public access.
-                                                                                                                                           pg145
+
 
 SOLUTION
 
@@ -27281,7 +27279,7 @@ Follow-Up Questions
 10.1 Sorted Merge: You are given two sorted #arrays, A and B, where A has a large enough buffer at the
          end to hold B. Write a method to merge Binto A in sorted order.
 
-                                                                                                                                          pg 149
+
 
 SOLUTION
 
@@ -27341,7 +27339,7 @@ place.
 
 10.2 Group Anagrams: Write a method to sort an #array of #strings so that all the anagrams are next to
           each other.
-                                                                                                                                    pg 750
+
 
 SOLUTION
 
@@ -27468,7 +27466,7 @@ You may notice that the #algorithm above is a modification of bucket sort.
          InputfindSin {15, 16, 19, 20, 25, 1, 3,4,5,7,10, 14}
          Output 8 (the index of 5 in the #array)
 
-                                                                                                                              pg 150
+
 
 SOLUTION
 
@@ -27597,7 +27595,7 @@ I #Solutions to Chapter 10 Sorting and Searching
         structure only supports positive integers.) Given a Listy which contains sorted, positive integers,
         find the index at which an element x occurs. If x occurs multiple times, you may return any index.
 
-                                                                                pg 150
+
 
 SOLUTION
 
@@ -27702,7 +27700,7 @@ as it would be in a normal #array.
 
       Output: 4
 
-                                                                                      pg 750
+
 
 SOLUTION
 
@@ -27814,7 +27812,7 @@ question will demonstrate that you are a careful #coder.
 10.6 Sort Big File: Imagine you have a 20 GB file with one #string per line. Explain how you would sort
           the file.
 
-                                                                                                                     pg 150
+
 
 SOLUTION
 
@@ -27838,7 +27836,7 @@ This #algorithm is known as external sort.
          What if you have only 10MB of memory? Assume that all the values are distinct and we now have
          no mo re than one billion non-negative integers.
 
-                                                                                                                                         pg 750
+
 
 SOLUTION
 
@@ -28161,7 +28159,7 @@ gers are found in each sequence of a thousand elements. Finally, in the third pa
          #array may have duplicate entries and you do not know what N is. With only 4 kilobytes of memory
          available, how would you print all duplicate elements in the #array?
 
-                                                                                                                                       pg 757
+
 
 SOLUTION
 
@@ -28246,7 +28244,7 @@ we could have of course used Java's built in BitSet class.
 
 10.9 Sorted Matrix Search: Given an M x N matrix in which each row and each column is sorted in
           ascending order, write a method to find an element.
-                                                                                                                                            pg 151
+
 
 SOLUTION
 
@@ -28602,7 +28600,7 @@ I #Solutions to Chapter 10 Sorting and Searching
         getRankOfNumber(3) 1
          getRankOfNumber(4) 3
 
-                                                                                                                                   pg 757
+
 
 SOLUTION
 
@@ -28781,7 +28779,7 @@ when we find it, return -1 up the tree. It is important that you handle cases li
          EXAMPLE
          Input: {S, 3, 1,2, 3}
          Output: {S, 1,3,2, 3}
-                                                                                                                                              pg 151
+
 
 SOLUTION
 
@@ -28964,7 +28962,7 @@ This #algorithm takes 0 (n) time.
 
                                       #Solutions to Testing
 
-11.1 Mistake: Find the mistake(s) in the following #code:                                         pg 157
+11.1 Mistake: Find the mistake(s) in the following #code:
           unsigned int ij
 
         for (i = laaj i >= aj --i)
@@ -29003,7 +29001,7 @@ This #code will now correctly print the list of all numbers from 100 to 1, in de
       single threaded, and uses only the C standard library. What programming errors could be causing
       this crash? How would you test each one?
 
-                                                                                                               pg 157
+
 
 SOLUTION
 
@@ -29052,7 +29050,7 @@ manner? Hopefully, it's the latter.
       int y). This method is part of the Piece class and returns whether or not the piece can move to
       position (x J y) . Explain how you would test this method.
 
-                                                                                                                  pg 757
+
 
 SOLUTION
 
@@ -29103,7 +29101,7 @@ This would look something like the below #code:
 The key to this problem is recognizing that we can't test every possible scenario, even if we would like to.
 So, instead, we must focus on the essential areas.
 
-11.4 No Test Tools: How would you load test a webpage without using any test tools?          pg157
+11.4 No Test Tools: How would you load test a webpage without using any test tools?
 SOLUTION
 
 Load testing helps to identify a web application's maximum operating capacity, as well as any bottlenecks
@@ -29132,7 +29130,7 @@ accepted valu es.
                                                   419
 Solutions to Chapter 11 I Testing
 
-11.5 Test a Pen: How would you test a pen?       pg 757
+11.5 Test a Pen: How would you test a pen?
 SOLUTION
 
 This problem is largely about understanding the constraints and approaching the problem in a structured
@@ -29196,7 +29194,7 @@ Solutions to Chapter 11 I Testing
 Remember that in any testing question, you need to test both the intended and unintended scenarios.
 People don't always use the product the way you want them to.
 
-11.6 Test an ATM: How would you test an ATM in a distributed banking system?  pg 157
+11.6 Test an ATM: How would you test an ATM in a distributed banking system?
 SOLUTION
 
 The first thing to do on this question is to clarify assumptions. Ask the following questions:
@@ -29241,7 +29239,7 @@ good tester understands the system priorities.
 
 12.1 Last K Lines: Write a method to print the last K lines of an input file using C++.
 
-                                                                                         pg 763
+
 
 SOLUTION
 
@@ -29318,7 +29316,7 @@ This #solution will require reading in the whole file, but only ten lines will b
 
 12.2 Reverse #String: Implement a function void reverse(char* str) in C or C++ which reverses a #null-
          terminated #string.
-                                                                                                                     pg 763
+
 
 SOLUTION
 
@@ -29370,7 +29368,7 @@ This is just one of many ways to implement this #solution. We could even impleme
          implemented? If the number of inputs is small, which #data structure options can be used instead of
          a hash table?
 
-                                                                                                                     pg 763
+
 
 SOLUTION
 
@@ -29419,7 +29417,7 @@ be small enough to make this time negligible.
 
 12.4 Virtual Functions: How do virtual functions work in C++?
 
-                                                               pg 764
+
 
 SOLUTION
 
@@ -29489,7 +29487,7 @@ with static binding, while virtual function calls are resolved at runtime with d
 
 12.5 Shallow vs Deep Copy: What is the difference between deep copy and shallow copy? Explain how
          you would use each .
-                                                                                                                                 pg 164
+
 
 SOLUTION
 
@@ -29533,7 +29531,7 @@ the copied structure is small.
                                                  425
 Solutions to Chapter 12 I C and C++
 
-, 2.6 Volatile: What is the significance of the keyword "volatile" in C?                       pg 164
+, 2.6 Volatile: What is the significance of the keyword "volatile" in C?
 
 SOLUTION
 
@@ -29615,7 +29613,7 @@ modify these shared variables. We may not want optimization on these variables.
 
 12.7 Virtual Base Class: Why does a destructor in base class need to be declared virtual?
 
-                                                                                                  pg 164
+
 
 SOLUTION
 
@@ -29660,7 +29658,7 @@ class is called.
       complete copy of the passed in #data structure. The #Node #data structure contains two pointers to
       other #Nodes.
 
-                                                                                                  pg 164
+
 
 SOLUTION
 
@@ -29727,7 +29725,7 @@ I #Solutions to Chapter 12 C and C++
         automatically counts the number of references to a SmartPointer<T* > object and frees the
          object of type T when the reference count hits zero.
 
-                                                                                                                                    pg 164
+
 
 SOLUTION
 
@@ -29932,7 +29930,7 @@ The #code for this problem is complicated, and you probably wouldn't be expected
 
          aligned_free() will free memory allocated by align_malloc.
 
-                                                                                       pg 764
+
 
 SOLUTION
 Typically, with malloc, we do not have control over where the memory is allocated within the heap. We
@@ -30027,7 +30025,7 @@ freeing pl, we deallocate the whole memory block.
          Minimize the number of calls to malloc and make sure that the memory is accessible by the
          notation a r r [ iJ [ j ] .
 
-                                                                                                                                 pg 764
+
 
 SOLUTION
 
@@ -30133,7 +30131,7 @@ with a single free call rather than using a special function to free the remaini
            #Solutions to Java
 
 13.1 Private Constructor: In terms of inheritance, what is the effect of keeping a constructor private?
-                                                                                                                                         pg 167
+
 
 SOLUTION
 
@@ -30145,7 +30143,7 @@ inherited, but only by its own or its parent's inner classes.
 
 13.2 Return from Finally: In Java, does the finally block get executed if we insert a return statement
          inside the try block of a try-catch -finally?
-                                                                                                                                         pg 167
+
 
 SOLUTION
 
@@ -30158,7 +30156,7 @@ Note that there are some cases in which the finally block will not get executed,
 
 13.3 Final, etc.: What is the difference between final, finally, and finalize?
 
-                                                                                pg 167
+
 
 SOLUTIONS
 
@@ -30276,7 +30274,7 @@ behavior during garbage collection.
 3 }
 
 13.4 Generics vs. Templates: Explain the difference between templates in C++ and generics in Java.
-                                                                                                                                         pg 167
+
 
 SOLUTION
 
@@ -30380,7 +30378,7 @@ Remember: Although Java generics and C++ templates look the same in many ways, t
 
 13.5 TreeMap, HashMap, LinkedHashMap: Explain the differences between TreeMap, HashMap, and
           LinkedHashMap. Provide an example of when each one would be best.
-                                                                                                                                         pg 167
+
 
 SOLUTION
 
@@ -30449,7 +30447,7 @@ Generally, unless there is a reason not to, you would use HashMap.That is, if yo
 in insertion order, then use LinkedHashMap. lfyou need to get the keys back in their true/natural order,
 then use TreeMap, Otherwise, HashMap is probably best It is typically faster and requires less overhead.
 
-13.6 Object Reflection: Explain what object reflection is in Java and why it is useful.  pg 168
+13.6 Object Reflection: Explain what object reflection is in Java and why it is useful.
 SOLUTION
 
 Object Reflection is a feature in Java that provides a way to get reflective information about Java classes and
@@ -30514,7 +30512,7 @@ Three main reasons are:
          #String continent) that computes the total population of a given continent, given a list of all
          countries and the name of a continent.
 
-                                                                                                                     pg 168
+
 
 SOLUTION
 
@@ -30617,7 +30615,7 @@ time to learn about them, though!
          getR a ndomSubset (List< Integer> list) that returns a random subset of arbitrary size. All
          subsets (including the empty set) should be equally likely to be chosen.
 
-                                                                                                                                         pg439
+
 
 SOLUTION
 
@@ -30749,7 +30747,7 @@ apartment belongs to one building, and each building belongs to one complex.
 
 14.1 Multiple Apartments: Write a SQL query to get a list of tenants who are renting more than one
           apartment.
-                                                                                                                                     pg 172
+
 
 SOLUTION
 
@@ -30774,7 +30772,7 @@ Solutions to Chapter 14 I #Databases
 
 14.2 Open Requests: Write a SQL query to get a list of all buildings and the number of open requests
           (Requests in which status equals 'Open').
-                                                                                                                          pg 173
+
 
 SOLUTION
 
@@ -30805,7 +30803,7 @@ useful to test the inner part of the query first, and then test the outer part.
 14.3 Close All Requests: Building #11 is undergoing a major renovation. Implement a query to close all
           requests from apartments in this building.
 
-                                                                                                                          pg 173
+
 
 SOLUTION
 
@@ -30818,7 +30816,7 @@ apartment IDs within building #11 and the list of update requests from those apa
 
 14.4 Joins: What are the different types of joins? Please explain how they differ and why certain types
           are better in certain situations.
-                                                                                                                          pg 173
+
 
 SOLUTION
 
@@ -30878,7 +30876,7 @@ are discussed below.
 
 14.5 Denormalization: What is denormalization? Explain the pros and cons.
 
-                                                                           pg 773
+
 
 SOLUTION
 
@@ -30925,7 +30923,7 @@ of both normalized and denormalized #databases.
 
 14.6 Entity-Relationship Diagram: Draw an entity-relationship diagram for a #database with companies,
           people, and professionals (people who work for companies) .
-                                                                                                                                                pg 173
+
 
 SOLUTION
 
@@ -30959,7 +30957,7 @@ A Person can have multiple phone numbers, which is why Phone is a multi-valued a
       Design what this #database might look like and provide a SQL query to return a list of the honor roll
       students (top 10%), sorted by their grade point average.
 
-                                                                pg 173
+
 
 SOLUTION
 
@@ -31061,7 +31059,7 @@ database design, but object-oriented design and programming in general.
 
 Solutions to Threads and Locks
 
-15.1 Thread vs. Process: What's the difference between a thread and a process?  pg 179
+15.1 Thread vs. Process: What's the difference between a thread and a process?
 SOLUTION
 
 Processes and threads are related to each other but are fundamentally different.
@@ -31080,7 +31078,7 @@ stack, but other thread s can read and write the heap memory.
 A thread is a particular execution path of a process. When one thread modifies a process resource, the
 change is immediately visible to sibling threads.
 
-15.2 Context Switch: How would you measure the time spent in a context switch?  pg 179
+15.2 Context Switch: How would you measure the time spent in a context switch?
 SOLUTION
 
 This is a tricky question, but let's start with a possible #solution.
@@ -31176,7 +31174,7 @@ That's okay; it's important in an interview to recognize when your #solution mig
       potentially occur if all the philosophers reached for the left chopstick at the same time. Using threads
       and locks, implement a simulation of the dining philosophers problem that prevents deadlocks.
 
-                                                                                          pg 180
+
 
 SOLUTION
 
@@ -31503,7 +31501,7 @@ prevents the ability to have a cycle, since a cycle means that a higher chopstic
 
 15.4 Deadlock-Free Class: Design a class which provides a lock only if there are no possible deadlocks.
 
-                                                                                                                     pg 780
+
 
 SOLUTION
 
@@ -31896,7 +31894,7 @@ More likely, you would be asked to sketch out pseudocode and possibly implement 
         will call second, and threadC will call third. Design a mechanism to ensure that first is called
          before second and second is called before third.
 
-                                                                                                                                                pg 780
+
 
 SOLUTION
 
@@ -32075,7 +32073,7 @@ I #Solutions to Chapter 15 Threads and Locks
       method B. If you have two threads in one instance of a program, can they both execute A at the
       same time? Can they execute A and B at the same time?
 
-                                                                                                                  pg 180
+
 
 SOLUTION
 
@@ -32107,7 +32105,7 @@ execute any method on a different instance of the object.
       of 3 and prints "Fizz': Another thread is responsible for divisibility of 5 and prints "Buzz': A third thread
       is responsible for divisibility of 3 and 5 and prints "FizzBuzz': A fou rth thread does the numbers.
 
-                                                                          pg 780
+
 
 SOLUTION
 
@@ -32411,7 +32409,7 @@ There are of course many other ways of implementing this as well.
 
 16.1 Number Swapper: Write a function to swap a number in place (that is, without temporary variables).
 
-                                                                                                                                   pg 787
+
 
 SOLUTION
 
@@ -32484,7 +32482,7 @@ This operation happens for each bit. Since it correctly swaps each bit, it will 
 
 16.2 Word Frequencies: Design a method to find the frequency of occurrences of any given word in a
          book. What if we were running this #algorithm mUltiple times?
-                                                                                                                                 pg 181
+
 
 SOLUTION
 
@@ -32582,7 +32580,7 @@ at how careful you are. Did you check for error conditions?
 16.3 Intersection: Given two straight line segments (represented as a start point and an end point)'
          compute the point of intersection, if any.
 
-                                                                                                                                           pg 181
+
 
 SOLUTION
 
@@ -32787,7 +32785,7 @@ For simplicity and compactness (it really makes the #code easier to read). we've
 within Point and Line #public. You can discuss with your interviewer the advantages and disadvantages
 of this choice.
 
-16.4 Tic Tac Win: Design an #algorithm to figure out if someone has won a game of tic-tac-toe.  pg 181
+16.4 Tic Tac Win: Design an #algorithm to figure out if someone has won a game of tic-tac-toe.
 SOLUTION
 
 At first glance, this problem seems really straightforward. We're just checking a tic-tac-toe board; how hard
@@ -33437,7 +33435,7 @@ problem is to assess your understanding of how to #code in a clean and maintaina
                                                         #Solutions to Chapter 16 I Moderate
 
 16.5 Factorial Zeros: Write an #algorithm which computes the number of trailing zeros in n factorial.
-                                                                                                                                 pg 181
+
 
 SOLUTION
 
@@ -33547,7 +33545,7 @@ your rules upfront so that you can implement it correctly.
 
           Output 3.That is, the pair (11, 8).
 
-                                                                                                                     pg 181
+
 
 SOLUTION
 
@@ -33669,7 +33667,7 @@ difference.Therefore, the overall runtime is 0 (A log A + B log B).
 
 16.7 Number Max: Write a method that finds the maximum of two numbers. You should not use if-else
          or any other comparison operator.
-                                                                                                                                          pg 181
+
 
 SOLUTION
 
@@ -33793,7 +33791,7 @@ most compact or efficient way to write it, but it does make what we're doing muc
 16.8 English tnt: Given any integer, print an English phrase that describes the integer (e.g., "One
          Thousand, Two Hundred Thirty Four").
 
-                                                                                                                             pg 182
+
 
 SOLUTION
 
@@ -33944,7 +33942,7 @@ The key in a problem like this is to make sure you consider all the special case
 16.9 Operations: Write methods to implement the multiply, subtract, and divide operations for integers.
         The results of all of these are integers. Use only the add operator.
 
-                                                                                                                                            pg 782
+
 
 SOLUTION
 
@@ -34237,7 +34235,7 @@ Solutions to Chapter 16 I Moderate
          be included in that year's count. For example, Person (birth = 1908, death = 1909) is included in the
          counts for both 1908 and 1909.
 
-                                                                                                                                 pg 182
+
 
 SOLUTION
 
@@ -34656,7 +34654,7 @@ speeds to say that one is faster than the other.
 16.11 Diving Board: You are building a diving board by placing a bunch of planks of wood end-to-end.
          There are two types of planks, one of length shorter and one of length longer. You must use
          exactly Kplanks of wood. Write a method to generate all possible lengths for the diving board.
-                                                                                                                                  pg 782
+
 
 SOLUTION
 
@@ -34862,7 +34860,7 @@ an #ArrayList of size 1.
       Write #code to print the encoded version of an XML element (passed in Element and Attribute
       objects).
 
-                                                            pg 782
+
 
 SOLUTION
 
@@ -34944,7 +34942,7 @@ encoding by forgetting to append the empty #string.
 
 16.13 Bisect Squares: Given two squares on a two-dimensional plane, find a line that would cut these two
          squares in half. Assume that the top and the bottom sides of the square run parallel to the x-axis.
-                                                                                                                                 pg 182
+
 
 SOLUTION
 
@@ -35113,7 +35111,7 @@ Solutions to Chapter 16 I Moderate
 
 16.14 Best Line: Given a two-dimensional graph with points on it, find a line which passes the most
           number of points.
-                                                                                                                                  pg 183
+
 
 SOLUTION
 
@@ -35371,7 +35369,7 @@ flag (infini te_s lope). We need to check this condition in the equals method.
          hit.
 
          Write a method that, given a guess and a #solution, returns the number of hits and pseudo-hits.
-                                                                                                                     pg 183
+
 
 SOLUTION
 
@@ -35509,7 +35507,7 @@ Solutions to Chapter 16 I Moderate
          Input: 1, 2, 4, 7, 1e, 11, 7, 12, 6, 7, 16, 18, 19
          Output: (3, 9)
 
-                                                                                                                                 pg 183
+
 
 SOLUTION
 
@@ -35688,7 +35686,7 @@ should prioritize these aspects.
           Input 2, -8, 3, -2, 4, -10
          OutputS (i.e., {3, -2, 4})
 
-                                                                                                                     pg 183
+
 
 SOLUTION
 
@@ -35780,7 +35778,7 @@ your interviewer; it will show how detail-oriented you are.
           matches the pattern aabab (where cat is a and go is b). It also matches patterns like a, ab, and b.
          Write a method to determine if value matches pattern.
 
-                                                                                                                     pg 183
+
 
 SOLUTION
 
@@ -36143,7 +36141,7 @@ can learn that it has failed .
 
          Output: 2, 4, 1 (in any order)
 
-                                                                                                                              pg 184
+
 
 SOLUTION
 
@@ -36340,7 +36338,7 @@ O(W) on an NxN matrix or, more generally, O(WH).
 
      Output: tree, used
 
-                                                                                       pg 184
+
 
 SOLUTION
 
@@ -36681,7 +36679,7 @@ length of the word is extremely fast. Linear on the length of the dictionary is 
          Input:{4 J lJ 2J lJ lJ 2}and{3 J 6 J 3 J 3}
          Output: {lJ 3}
 
-                                                                                                                             pg 784
+
 
 SOLUTION
 
@@ -36961,7 +36959,7 @@ Solutions to Chapter 16 I Moderate
           must design yourself. The only input to your method is K. You should print the final grid and return
           nothing. The method signature might be something like void printKMoves (int K) .
 
-                                                                                                                                           pg 185
+
 
 SOLUTION
 
@@ -37550,7 +37548,7 @@ Solutions to Chapter 16 I Moderate
           generates a random number between 0 and 4 (inclusive), write a method that generates a random
           number between 0 and 6 (inclusive).
 
-                                                                                                                     pg 186
+
 
 SOLUTION
 
@@ -37705,7 +37703,7 @@ and that all values are equally likely.
 
 16.24 Pairs with Sum: Design an #algorithm to find all pairs of integers within an #array which sum to a
          specified value.
-                                                                                                                         pg 785
+
 
 SOLUTION
 
@@ -37852,7 +37850,7 @@ stepisO(N log N) .
          The cache should map from keys to values (allowing you to insert and retrieve a value associated
          with a particular key) and be initialized with a max size. When it is full, it should evict the least
          recently used item. You can assume the keys are integers and the values are #strings.
-                                                                                                                     pg 185
+
 
 SOLUTION
 
@@ -38090,7 +38088,7 @@ need access to this class and really should only exist within the scope of Cache
         Input: 2*3+5/6*3+15
         Output: 23.5
 
-                                                                                                                                 pg 185
+
 
 SOLUTION
 
@@ -38595,7 +38593,7 @@ the details can wait!
 17.1 Add Without Plus: Write a function that adds two numbers. You should not use + or any arithmetic
           operators.
 
-                                                                                                                                 pg 186
+
 
 SOLUTION
 
@@ -38679,7 +38677,7 @@ re-implement them with the constraints of the given problem.
          of the 52! permutations of the deck has to be equally likely. Assume that you are given a random
          number generator which is perfect.
 
-                                                                                                                               pg 786
+
 
 SOLUTION
 
@@ -38763,7 +38761,7 @@ The iterative approach is usually how we see this #algorithm written.
 
 17.3 Random Set: Write a method to randomly generate a set of mintegers from an #array of size n. Each
          element must have equal probability of being chosen.
-                                                                                                                     pg 186
+
 
 SOLUTION
 
@@ -38861,7 +38859,7 @@ Both #solutions are, not surprisingly, very similar to the #algorithm to shuffle
       the jth bit of A[i]," which takes constant time. Write #code to find the missing integer. Can you do it
       in O(n) time?
 
-                                                                                          pg 186
+
 
 SOLUTION
 
@@ -39064,7 +39062,7 @@ Solutions to Chapter 17 I Hard
 
 17.5 Letters and Numbers: Given an #array filled with letters and numbers, find the longest subarray with
          an equal number of letters and numbers.
-                                                                                                                     pg 786
+
 
 SOLUTION
 
@@ -39315,7 +39313,7 @@ This #solution takes 0 (N) time, where Nis size of the #array.
 
 11.6 Count of 2s: Write a method to count the number of 2s between 0 and n.
 
-                                                                             pg 186
+
 
 SOLUTION
 
@@ -39513,7 +39511,7 @@ each of them.
          Synonyms: (Jon, John), (John, Johnny), (Chris, Kris), (Chris, Christopher)
       Output: John (27), Kris (36)
 
-                                                                                        pg187
+
 
 SOLUTION
 
@@ -39956,7 +39954,7 @@ must at least read in the B + P pieces of #data.
       the person below him or her. Given the heights and weights of each person in the circus, write a
       method to compute the largest possible number of people in such a tower.
 
-                                                                                              pg 787
+
 
 SOLUTION
 
@@ -40225,7 +40223,7 @@ explanations of this #solution.
          and 7. Note that 3,5, and 7 do not have to be factors, but it should not have any other prime factors.
          For example, the first several multiples would be (in order) 1,3, 5, 7, 9, 15,21.
 
-                                                                                                                                 pg 187
+
 
 SOLUTION
 
@@ -40639,7 +40637,7 @@ I #Solutions to Chapter 17 Hard
 
          Output: 5
 
-                                                                                                                     pg 787
+
 
 SOLUTION
 
@@ -40931,7 +40929,7 @@ This #algorithm runs in O( N) time and 0(1) space.
          distance (in terms of number of words) between them in the file. If the operation will be repeated
          many times for the same file (but different pairs of words), can you optimize your #solution?
 
-                                                                                                                                 pg 187
+
 
 SOLUTION
 
@@ -41166,7 +41164,7 @@ Solutions to Chapter 17 I Hard
           into a doubly linked list. The values should be kept in order and the operation should be performed
           in place (that is, on the original #data structure).
 
-                                                                                                                 pg 788
+
 
 SOLUTION
 
@@ -41444,7 +41442,7 @@ The approach takes O(N) time, since each #node is only touched an average of onc
          EXAMPLE
          Input: jesslookedjustliketimherbrother
          Output: jess looked just like tim her brother (7 unrecognized characters)
-                                                                                                                                           pg 188
+
 
 SOLUTION
 
@@ -41737,7 +41735,7 @@ Therefore, the runtime of this function is O( n2) .
 566   Cracking the Coding Interview, 6th Edition
                                                   I #Solutions to Chapter 17 Hard
 
-17.14 Smallest K: Design an #algorithm to find the smallest K numbers in an #array.               pg 788
+17.14 Smallest K: Design an #algorithm to find the smallest K numbers in an #array.
 
 SOLUTION
 
@@ -42263,7 +42261,7 @@ elements at the end.
 
 17.15 Longest Word: Given a list of words, write a program to find the longest word made of other words
          in the list.
-                                                                                                                                       pg 188
+
 
 SOLUTION
 
@@ -42417,7 +42415,7 @@ Solutions to Chapter 17 I Hard
         Input: {3e, 15, 6e, 75, 45, 15, 15, 45}
         Output: 18e minutes ({30, 6e, 45, 45}).
 
-                                                                                                                                            pg 188
+
 
 SOLUTION
 
@@ -42703,7 +42701,7 @@ best set that ends with a [ i] ?"
 
 17.17 Multi Search: Given a #string b and an #array of smaller #strings T, design a method to search b for
         each small #string in T.
-                                                                                                                     pg 189
+
 
 SOLUTION
 
@@ -43186,7 +43184,7 @@ Solutions to Chapter 17 I Hard
              {1, 5, 9}
              {7, 5,9,8,2,1,3, 5. 7.9.1,1,5,8,8,9, 7}
          Output: [7, 18] (the underlined portion above)
-                                                                                                                     pg 789
+
 
 SOLUTIONS
 
@@ -43835,7 +43833,7 @@ time in the worst case.
 17.19 Missing Two: You are given an #array with all the numbers from 1 to N appearing exactly once,
           except for one number that is missing. How can you find the missing number in 0 (N) time and
          O( 1) space? What if there were two numbers missing?
-                                                                                                                                                    pg 189
+
 
 SOLUTIONS
 
@@ -44147,7 +44145,7 @@ in the end.
 17.20 Continuous Median: Numbers are randomly generated and passed to a method. Write a program
           to find and maintain the median value as new values are generated.
 
-                                                                                                                     pg 189
+
 
 SOLUTIONS
 
@@ -44271,7 +44269,7 @@ I #Solutions to Chapter 17 Hard
 
       Output: 26
 
-                                                                                        pg 189
+
 
 SOLUTION
 
@@ -44747,7 +44745,7 @@ Yes, this really is the entire #code! It is still 0 (N) time, but it's a lot sim
          EXAMPLE
          Input: DAMP, LIKE
         Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
-                                                                                                                      pg789
+
 
 SOLUTION
 
@@ -45315,7 +45313,7 @@ searchLevel, but leave out the rest.
 17.23 Max Square Matrix: Imagine you have a square matrix, where each cell (pixel) is either black or
          white. Design an #algorithm to find the maximum subsquare such that all four borders are filled with
          black pixels.
-                                                                                                                               pg 790
+
 
 SOLUTION
 
@@ -45585,7 +45583,7 @@ sa            if (r + 1 < matrix. length) {
 17.24 Max Submatrix: Given an NxN matrix of positive and negative integers, write #code to find the
         submatrix with the largest possible sum.
 
-                                                                                                                                         pg 190
+
 
 SOLUTION
 
@@ -46033,7 +46031,7 @@ interview without a lot of help from your interviewer.
         rectangle of letters such that every row forms a word (reading left to right)and every column forms
         a word (reading top to bottom).The words need not be chosen consecutively from the list, but all
         rows must be the same length and all columns must be the same height.
-                                                                                                                     pg 790
+
 
 SOLUTION
 
@@ -46470,7 +46468,7 @@ Solutions to Chapter 17 I Hard
              13, 16    e.14285714285714285
              19, 24
 
-                                                 pg 190
+
 
 SOLUTION
 

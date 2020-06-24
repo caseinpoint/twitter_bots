@@ -1,4 +1,4 @@
-user = 'AmbJohnBolton'
+user = 'IngrahamAngle'
 print(f'spamming screen_name: {user}\nscraping...')
 
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -58,11 +58,11 @@ for t in tweets:
 		elif len(w) == 0:
 			break
 
-	reply = chain.generate_tweet(start_with=begin)
-	print(f'___reply:___\n{reply}\n#YourOwnWords\n')
+	reply = chain.generate_tweet(start_with=begin, append_tag='\n#ThisIsWhatYouSoundLike')
+	print(f'___reply:___\n{reply}\n')
 
 	try:
-		twit.statuses.update(status=f'{reply}\n#YourOwnWords', in_reply_to_status_id=t['id'], auto_populate_reply_metadata='true')
+		twit.statuses.update(status=reply, in_reply_to_status_id=t['id'], auto_populate_reply_metadata='true')
 	except Exception as e:
 		replies -= 1
 		print(f'{"!"*32}error{"!"*32}\n{e}\n')

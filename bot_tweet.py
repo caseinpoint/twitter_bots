@@ -16,38 +16,35 @@ def speak(text):
 	os.system('mpg123 -q speech.mp3')
 
 print('*' * 22, 'tweeting at random intervals', '*' * 22)
-num = 32
+num = 28
 for i in range(num):
 	print('~i:', i)
-	if i % 8 == 0:
+	if i % 7 == 0:
 		category = 'newtestament'
 		chain.load_training('bin/new_testament.bin')
-	elif i % 8 == 1:
+	elif i % 7 == 1:
 		# category = 'christians'
 		# chain.load_training('bin/twitter/jesusfreak.bin')
 		category = 'apologists'
 		chain.load_training('bin/twitter/apologists.bin')
-	elif i % 8 == 2:
-		category = 'quran'
-		chain.load_training('bin/quran.bin')
-	elif i % 8 == 3:
-		# category = 'allgods'
-		# chain.load_training('bin/twitter/allgods.bin')
-		category = 'deepakchopra'
-		chain.load_training('bin/chopra.bin')
-	elif i % 8 == 4:
-		category = 'samharris'
-		chain.load_training('bin/harris.bin')
-	elif i % 8 == 5:
-		category = 'shakespeare'
-		chain.load_training('bin/shakespeare.bin')
-	elif i % 8 == 6:
-		category = 'news'
-		chain.load_training('bin/twitter/news.bin')
-	else:
+	elif i % 7 == 2:
 		category = 'atheists'
 		# chain.load_training('bin/twitter/atheists.bin')
 		chain.load_training('bin/atheists.bin')
+	elif i % 7 == 3:
+		category = 'quran'
+		chain.load_training('bin/quran.bin')
+		# category = 'allgods'
+		# chain.load_training('bin/twitter/allgods.bin')
+	elif i % 7 == 4:
+		category = 'deepakchopra'
+		chain.load_training('bin/chopra.bin')
+	elif i % 7 == 5:
+		category = 'shakespeare'
+		chain.load_training('bin/shakespeare.bin')
+	else:
+		category = 'news'
+		chain.load_training('bin/twitter/news.bin')
 		# category = 'programming'
 		# chain.load_training('bin/programming.bin')
 
