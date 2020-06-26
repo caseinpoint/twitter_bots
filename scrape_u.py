@@ -7,7 +7,7 @@ from markov_chain import MarkovChain
 from markov_algorithms import *
 
 EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|#rape|#raping|#trump|#maga|#pedophile|#fakenews|nigger', re.I)
-TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:\'"()[\\]{}-]', re.I)
+TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:\\\'"()[\\]{}-]', re.I)
 USER_NAME = re.compile(r'@\S+', re.I)
 LINKS = re.compile(r'https?\S*', re.I)
 AMPERSAND = re.compile(r'&amp;', re.I)

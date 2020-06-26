@@ -10,7 +10,7 @@ query = '(#belief OR #beliefs OR #believe OR #IBelieve OR #WeBelieve OR #MyBelie
 print(f'____query____:\n{query}')
 
 EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|rape|raping|#trump|#maga|pedophile|#fakenews|nigger', re.I)
-TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:"\'()[\\]{}-]', re.I)
+TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:"\\\'()[\\]{}-]', re.I)
 RETWEET = re.compile(r'\s?RT\s')
 USER_NAME = re.compile(r'@\S+', re.I)
 LINKS = re.compile(r'https?\S*', re.I)
