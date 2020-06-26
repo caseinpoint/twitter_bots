@@ -52,3 +52,9 @@ def aw_favor_illegibility(a, b):
 # Returns a fitness function multiplied by a constant k
 def aw_mult(f, k):
     return lambda a, b: f(a, b) * k
+
+def dg_disfavor_consecutive_hashtags(a, b):
+	if a.startswith('#') and b.startswith('#'):
+		return 0
+	else:
+		return 0.5

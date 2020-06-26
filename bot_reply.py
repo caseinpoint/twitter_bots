@@ -3,7 +3,6 @@ from re import split
 from time import sleep
 from markov_chain import MarkovChain
 chain = MarkovChain()
-# chain.load_training('bin/twitter/coding.bin')
 
 from twitter import OAuth, Twitter
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
