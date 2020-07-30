@@ -1,4 +1,5 @@
-user = 'IngrahamAngle'
+user = 'LindseyGrahamSC' # on deck
+# user = 'GOPLeader' # on deck
 print(f'spamming screen_name: {user}\nscraping...')
 
 from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
@@ -21,6 +22,7 @@ LT = re.compile(r'&lt;', re.I)
 chain = MarkovChain()
 
 tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False)
+
 for i in range(24):
 	try:
 		tweets += twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False, max_id=tweets[-1]['id']-1)
@@ -41,6 +43,10 @@ for t in tweets:
 print(f'length of chain: {len(chain.tree)}\n')
 
 # chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
+chain.save_training(f'bin/twitter/{user}.bin')
+
+tweets = [tweets[i] for i in range(100)]
+tweets.reverse()
 
 print(f'{"—"*64}\n')
 replies = 0
@@ -58,7 +64,7 @@ for t in tweets:
 		elif len(w) == 0:
 			break
 
-	reply = chain.generate_tweet(start_with=begin, append_tag='\n#ThisIsWhatYouSoundLike')
+	reply = chain.generate_tweet(start_with=begin, append_tag='\n#WhatYouSoundLike')
 	print(f'___reply:___\n{reply}\n')
 
 	try:
@@ -68,6 +74,4 @@ for t in tweets:
 		print(f'{"!"*32}error{"!"*32}\n{e}\n')
 
 	print(f'{"—"*64}\n')
-	if replies == 100:
-		break
 	sleep(randint(2,8))

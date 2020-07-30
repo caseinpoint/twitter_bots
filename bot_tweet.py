@@ -20,7 +20,7 @@ num = 28
 for i in range(num):
 	print('~i:', i)
 	if i % 7 == 0:
-		category = 'newtestament'
+		category = 'bible'
 		chain.load_training('bin/new_testament.bin')
 	elif i % 7 == 1:
 		# category = 'christians'
@@ -48,14 +48,8 @@ for i in range(num):
 		# category = 'programming'
 		# chain.load_training('bin/programming.bin')
 
-	# else:
-	# 	category = None
-	# 	chain.load_training('bin/follow_me.bin')
-
-	# if category is not None:
-	tweet = chain.generate_tweet(append_tag=f'#MarkovChain.\n\n[Category: #{category}]')
-	# else:
-	# 	tweet = chain.generate_tweet(follow=True)
+	verse = True if category == 'bible' else False
+	tweet = chain.generate_tweet(append_verse=verse, append_tag=f'#MarkovChain.\n\n[Category: #{category}]')
 	print(f'-t: {tweet}')
 	twit.statuses.update(status=tweet)
 	# speak(tweet)

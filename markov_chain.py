@@ -2,6 +2,10 @@
 
 import re, glob, pickle, random
 
+from bible_books import ot_books, nt_books
+ot_keys = list(ot_books)
+nt_keys = list(nt_books)
+
 class MarkovChain:
 	def __init__(self):
 		self.tree = dict()
@@ -72,7 +76,17 @@ class MarkovChain:
 				word = dist[0][0]
 			yield word
 
-	def generate_tweet(self, start_with=None, rand=lambda x: random.random() * x, append_tag=None, follow=False):
+	def generate_verse(self):
+		if random.randint(0, 1) == 0:
+			key = random.choice(ot_keys)
+			chapter = random.randint(1, ot_books[key])
+		else:
+			key = random.choice(nt_keys)
+			chapter = random.randint(1, nt_books[key])
+		verse = random.randint(1, 26)
+		return f'[{key} {chapter}:{verse}]'
+
+	def generate_tweet(self, start_with=None, rand=lambda x: random.random() * x, append_tag=None, append_verse=False, follow=False):
 		if len(self.tree) == 0:
 			return
 		t_keys = [w for w in self.tree.keys()]
@@ -87,7 +101,6 @@ class MarkovChain:
 
 		while count_len <= 200:
 			if word not in self.tree:
-				# word = random.choice(t_keys)
 				break
 			dist = sorted([(w, rand(self.tree[word][w] / len(self.tree[word]))) for w in self.tree[word]], key=lambda k: 1-k[1])
 
@@ -115,7 +128,9 @@ class MarkovChain:
 
 		if tweet[0] != '@MarkovChurch':
 			tweet[0] = tweet[0].capitalize()
-		# tweet.append('#MarkovChain.')
+
+		if append_verse == True:
+			tweet.append(self.generate_verse())
 
 		if append_tag is not None:
 			tweet.append(append_tag)

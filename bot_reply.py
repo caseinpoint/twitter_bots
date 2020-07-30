@@ -10,8 +10,8 @@ from credentials import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECR
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
-# query = '(#starseed OR #magickal OR #occult OR #oneness OR #energyhealing OR #wicca OR #astrology OR #reiki OR #chakras OR #divination OR #numerology OR #mindfulness)'
-query = '(#jesuschrist OR #jesus OR #jesusheals OR #bibleverse OR #biblequote OR #christ OR #godisgood OR #jesussaves OR #biblestudy OR #jesuslovesyou)'
+# query = '(#starseed OR #crystalenergy OR #occult OR #oneness OR #energyhealing OR #wicca OR #astrology OR #reiki OR #chakras OR #divination OR #numerology OR #mindfulness)'
+query = '(#jesuschrist OR #godisgood OR #jesus OR #jesusheals OR #bibleverse OR #christ OR #godislove OR #jesussaves OR #jesusisking)'
 print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 
 replies = 0
@@ -25,16 +25,22 @@ def reply(tweet):
 		# print('_source_: quran_testament')
 		chain.load_training('bin/atheists.bin')
 		print('_source_: atheists')
+		verse = False
+		tag = '#MarkovChain'
 	elif replies % 4 == 1:
 		# chain.load_training('bin/chopra.bin')
 		# print('_source_: chopra')
 		chain.load_training('bin/new_testament.bin')
 		print('_source_: new_testament')
+		verse = True
+		tag = None
 	else:
 		# chain.load_training('bin/harris.bin')
 		# print('_source_: harris')
 		chain.load_training('bin/quran.bin')
 		print('_source_: quran')
+		verse = True
+		tag = None
 	# r'[^a-zA-Z#]' or r'\W'
 	t_words = sorted(split(r'[^a-zA-Z#]', tweet['full_text']), key=lambda w: len(w), reverse=True)
 	begin = None
@@ -45,7 +51,7 @@ def reply(tweet):
 		elif len(word) == 0:
 			break
 
-	r_tweet = chain.generate_tweet(start_with=begin, append_tag='#MarkovChain.', follow=False)
+	r_tweet = chain.generate_tweet(start_with=begin, append_verse=verse, append_tag=tag, follow=False)
 	print(f'_reply_:\n{r_tweet}\n')
 
 	try:
@@ -60,7 +66,7 @@ tweets = twit.search.tweets(q=query, count=100, tweet_mode='extended', lang='en'
 
 for t in tweets['statuses']:
 	# if t['is_quote_status'] == False and
-	if len(t['entities']['user_mentions']) < 10:
+	if len(t['entities']['user_mentions']) < 16:
 		replies += 1
 		print(f'tweet #{replies} [id: {t["id"]}]\n_original_:\n{t["full_text"]}')
 		print(f'_user_:\n{t["user"]["name"]} (@{t["user"]["screen_name"]}) [id: {t["user"]["id"]}]\n')

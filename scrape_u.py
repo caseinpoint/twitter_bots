@@ -7,13 +7,13 @@ from markov_chain import MarkovChain
 from markov_algorithms import *
 
 EXCLUDE_WORDS = re.compile(r'#prolife|#chooselife|#rape|#raping|#trump|#maga|#pedophile|#fakenews|nigger', re.I)
-TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*;:\\\'"()[\\]{}-]', re.I)
+TEXT_ONLY = re.compile('[^A-Z0-9 .,+=!?&@_/#$%^*’;:\\\'"()[\\]{}-]', re.I)
 USER_NAME = re.compile(r'@\S+', re.I)
 LINKS = re.compile(r'https?\S*', re.I)
 AMPERSAND = re.compile(r'&amp;', re.I)
 GT = re.compile(r'&gt;', re.I)
 LT = re.compile(r'&lt;', re.I)
-LONE_PUNCTUATION = re.compile(r'\s[^a-zA-Z0-9_]\s')
+LONE_PUNCTUATION = re.compile(r'\s[,.!?]\s')
 TYPO_HASHTAGS = re.compile(r'\S+#\w+', re.I)
 def fix_hashtag(matchobj):
 	fix = matchobj.group(0).split('#')
@@ -31,7 +31,7 @@ def fix_exclamation(matchobj):
 	fix = matchobj.group(0).split('!')
 	return '! '.join(fix)
 
-# search_terms = ['rezaaslan', 'DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV']
+# search_terms = ['rezaaslan', 'DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV', 'STRtweets']
 # search_terms = ['FFRF', 'AmericanAtheist', 'SamHarrisOrg', 'VicedRhino', 'holykoolaid', 'paulogia0', 'magnabosco', 'Prophet_of_Zod', 'hemantmehta', 'telltaleatheist', 'DearMrAtheist', 'americnhumanist']
 search_terms = ['npr', 'nprpolitics', 'MSNBC', 'MSNBC_Breaking', 'CNN', 'BBCWorld', 'BBCBreaking', 'MotherJones', 'thehill', 'MoveOn', 'NBCNews', 'NBCNewsNow', 'AJEnglish']
 # search_terms = ['DeepakChopra', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain', 'NativeAmWisdom', 'CrystalWind']
@@ -64,7 +64,7 @@ for user in search_terms:
 		# chain.train(t['full_text'])
 	print(f'len(chain.tree): {len(chain.tree)}')
 
-chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(aw_favor_alternating_complexity, .1)], iterations=len(chain.tree))
+chain.bulk_adjust_weights(fitness_functions=[aw_mult(aw_favor_complexity, .001), aw_mult(aw_favor_punctuation, .00015), aw_mult(dg_disfavor_consecutive_hashtags, .001)], iterations=len(chain.tree))
 
 print('Sample tweet:', chain.generate_tweet())
 
