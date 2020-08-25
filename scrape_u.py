@@ -31,7 +31,7 @@ def fix_exclamation(matchobj):
 	fix = matchobj.group(0).split('!')
 	return '! '.join(fix)
 
-# search_terms = ['rezaaslan', 'DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV', 'STRtweets']
+# search_terms = ['rezaaslan', 'DrFrankTurek', 'RFupdates', 'ChristianDefORG', 'RaviZacharias', 'RamsdenMichael', 'LeeStrobel', 'DiscoveryInst1', 'BishopBarron', 'RTB_HRoss', 'RTB_official', 'alisteremcgrath', 'mRobLV', 'STRtweets', 'InspiringPhilos']
 # search_terms = ['FFRF', 'AmericanAtheist', 'SamHarrisOrg', 'VicedRhino', 'holykoolaid', 'paulogia0', 'magnabosco', 'Prophet_of_Zod', 'hemantmehta', 'telltaleatheist', 'DearMrAtheist', 'americnhumanist']
 search_terms = ['npr', 'nprpolitics', 'MSNBC', 'MSNBC_Breaking', 'CNN', 'BBCWorld', 'BBCBreaking', 'MotherJones', 'thehill', 'MoveOn', 'NBCNews', 'NBCNewsNow', 'AJEnglish']
 # search_terms = ['DeepakChopra', 'marwilliamson', 'goop', 'GwynethPaltrow', 'BabaRamDass', 'davidji_com', 'MindfulEveryday', 'DanielleLaPorte', 'PadraigOMorain', 'NativeAmWisdom', 'CrystalWind']

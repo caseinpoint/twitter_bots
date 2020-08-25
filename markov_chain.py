@@ -102,13 +102,11 @@ class MarkovChain:
 		while count_len <= 200:
 			if word not in self.tree:
 				break
-			dist = sorted([(w, rand(self.tree[word][w] / len(self.tree[word]))) for w in self.tree[word]], key=lambda k: 1-k[1])
+			# dist = sorted([(w, rand(self.tree[word][w] / len(self.tree[word]))) for w in self.tree[word]], key=lambda k: 1-k[1])
+			dist = sorted([(w, rand(self.tree[word][w])) for w in self.tree[word]], key=lambda k: k[1], reverse=False)
 
 			prev_word = word
-			if len(dist) > 1:
-				word = dist[1][0]
-			else:
-				word = dist[0][0]
+			word = dist[0][0]
 			if word in tweet:
 				word = random.choice(dist)[0]
 

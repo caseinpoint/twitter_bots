@@ -1,4 +1,4 @@
-user = 'LindseyGrahamSC' # on deck
+user = 'JerryFalwellJr'
 # user = 'GOPLeader' # on deck
 print(f'spamming screen_name: {user}\nscraping...')
 
@@ -23,7 +23,7 @@ chain = MarkovChain()
 
 tweets = twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False)
 
-for i in range(24):
+for i in range(36):
 	try:
 		tweets += twit.statuses.user_timeline(screen_name=user, count=200, tweet_mode='extended', trim_user=True, include_rts=False, max_id=tweets[-1]['id']-1)
 	except Exception as e:
@@ -64,7 +64,7 @@ for t in tweets:
 		elif len(w) == 0:
 			break
 
-	reply = chain.generate_tweet(start_with=begin, append_tag='\n#WhatYouSoundLike')
+	reply = chain.generate_tweet(start_with=begin, append_tag='\n#YourWordFrequencies')
 	print(f'___reply:___\n{reply}\n')
 
 	try:

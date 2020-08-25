@@ -11,7 +11,7 @@ oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
 # query = '(#starseed OR #crystalenergy OR #occult OR #oneness OR #energyhealing OR #wicca OR #astrology OR #reiki OR #chakras OR #divination OR #numerology OR #mindfulness)'
-query = '(#jesuschrist OR #godisgood OR #jesus OR #jesusheals OR #bibleverse OR #christ OR #godislove OR #jesussaves OR #jesusisking)'
+query = '(#jesusmatters OR #godisgreat OR #jesuschrist OR #godisgood OR #jesusheals OR #bibleverse OR #godislove OR #jesussaves OR #jesusisking)'
 print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 
 replies = 0
@@ -26,7 +26,7 @@ def reply(tweet):
 		chain.load_training('bin/atheists.bin')
 		print('_source_: atheists')
 		verse = False
-		tag = '#MarkovChain'
+		tag = '#MarkovProcess'
 	elif replies % 4 == 1:
 		# chain.load_training('bin/chopra.bin')
 		# print('_source_: chopra')
