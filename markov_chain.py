@@ -1,4 +1,5 @@
-# https://medium.com/@G3Kappa/writing-a-weight-adjustable-markov-chain-based-text-generator-in-python-9bbde6437fb4
+### Original code: https://medium.com/@G3Kappa/writing-a-weight-adjustable-markov-chain-based-text-generator-in-python-9bbde6437fb4
+### Several additions and modifications have been made. Probably the largest addition is the generate_tweet() method.
 
 import re, glob, pickle, random
 
@@ -102,18 +103,21 @@ class MarkovChain:
 		while count_len <= 200:
 			if word not in self.tree:
 				break
+			### original randomizing: ###
 			# dist = sorted([(w, rand(self.tree[word][w] / len(self.tree[word]))) for w in self.tree[word]], key=lambda k: 1-k[1])
-			dist = sorted([(w, rand(self.tree[word][w])) for w in self.tree[word]], key=lambda k: k[1], reverse=False)
+			### new randomizing: ###
+			dist = sorted([(w, rand(self.tree[word][w])) for w in self.tree[word]], key=lambda k: k[1])
+			### more random equals more better ###
 
 			prev_word = word
 			word = dist[0][0]
-			if word in tweet:
+			tries = 0
+			while word in tweet and tries < 3:
 				word = random.choice(dist)[0]
+				tries += 1
 
 			if word == 'i':
 				tweet.append('I')
-			elif word == '@markovchurch':
-				tweet.append('@MarkovChurch')
 			elif prev_word.endswith('.') or prev_word.endswith('!') or prev_word.endswith('?'):
 				tweet.append(word.capitalize())
 			else:
