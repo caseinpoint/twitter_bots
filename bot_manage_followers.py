@@ -28,8 +28,11 @@ for usr_id in to_follow:
 	try:
 		twit.friendships.create(user_id=usr_id)
 	except Exception as e:
-		continue
+		print(e)
 
 for usr_id in to_delete:
-	twit.friendships.destroy(user_id=usr_id)
+	try:
+		twit.friendships.destroy(user_id=usr_id)
+	except Exception as e:
+		print(e)
 print('done')

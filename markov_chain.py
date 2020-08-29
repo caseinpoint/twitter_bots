@@ -1,4 +1,5 @@
 ### Original code: https://medium.com/@G3Kappa/writing-a-weight-adjustable-markov-chain-based-text-generator-in-python-9bbde6437fb4
+
 ### Several additions and modifications have been made. Probably the largest addition is the generate_tweet() method.
 
 import re, glob, pickle, random
@@ -77,6 +78,7 @@ class MarkovChain:
 				word = dist[0][0]
 			yield word
 
+	### new addition ###
 	def generate_verse(self):
 		if random.randint(0, 1) == 0:
 			key = random.choice(ot_keys)
@@ -87,7 +89,8 @@ class MarkovChain:
 		verse = random.randint(1, 26)
 		return f'[{key} {chapter}:{verse}]'
 
-	def generate_tweet(self, start_with=None, rand=lambda x: random.random() * x, append_tag=None, append_verse=False, follow=False):
+	### new addition ###
+	def generate_tweet(self, start_with=None, rand=lambda x: x / random.random(), append_tag=None, append_verse=False, follow=False):
 		if len(self.tree) == 0:
 			return
 		t_keys = [w for w in self.tree.keys()]
@@ -95,11 +98,11 @@ class MarkovChain:
 			word = random.choice(t_keys)
 		else:
 			word = start_with
-		while word.endswith('.') or word.endswith('!') or word.endswith('?'):
-			word = random.choice(t_keys)
-		tweet = [word]
-		count_len = len(word) + 1
 
+		tweet = [word]
+		count_len = len(word)
+
+		# first_word = True
 		while count_len <= 200:
 			if word not in self.tree:
 				break
@@ -108,6 +111,10 @@ class MarkovChain:
 			### new randomizing: ###
 			dist = sorted([(w, rand(self.tree[word][w])) for w in self.tree[word]], key=lambda k: k[1])
 			### more random equals more better ###
+
+			# if first_word == True:
+			# 	print(dist)
+			# 	first_word = False
 
 			prev_word = word
 			word = dist[0][0]
@@ -128,8 +135,7 @@ class MarkovChain:
 			if count_len >= 70 and (word.endswith('.') or word.endswith('!') or word.endswith('?')):
 				break
 
-		if tweet[0] != '@MarkovChurch':
-			tweet[0] = tweet[0].capitalize()
+		tweet[0] = tweet[0].capitalize()
 
 		if append_verse == True:
 			tweet.append(self.generate_verse())

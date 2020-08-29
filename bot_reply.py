@@ -11,7 +11,7 @@ oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twit = Twitter(auth=oauth, retry=1)
 
 # query = '(#starseed OR #crystalenergy OR #occult OR #oneness OR #energyhealing OR #wicca OR #astrology OR #reiki OR #chakras OR #divination OR #numerology OR #mindfulness)'
-query = '(#jesusmatters OR #godisgreat OR #jesuschrist OR #godisgood OR #jesusheals OR #bibleverse OR #godislove OR #jesussaves OR #jesusisking)'
+query = '(#findjesus OR #jesusmatters OR #godisgreat OR #jesuschrist OR #godisgood OR #jesusheals OR #bibleverse OR #godislove OR #jesussaves OR #jesusisking)'
 print(f'{"*"*16} _query_: {query} {"*"*16}\n')
 
 replies = 0
